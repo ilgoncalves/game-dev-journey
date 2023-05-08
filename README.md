@@ -19,27 +19,35 @@ The goal is to explore the engaging aspects of physics and mathematics by applyi
    - Object-oriented programming
    - Memory management
    - Standard Template Library (STL)
-2. Advanced C++ Concepts
+2. Data Structures and Algorithms
+   - Basic data structures (arrays, linked lists, stacks, queues)
+   - Trees and graphs
+   - Hash tables and dictionaries
+   - Sorting algorithms (quicksort, merge sort, heap sort)
+   - Searching algorithms (binary search, depth-first search, breadth-first search)
+   - Dynamic programming and greedy algorithms
+   - Graph algorithms (Dijkstra's, Kruskal's, Prim's)
+3. Advanced C++ Concepts
    - Templates and metaprogramming
    - Exception handling
    - Lambda functions
    - Multithreading and concurrency
    - Modern C++ features
-3. Mathematics
+4. Mathematics
    - Linear algebra
    - Geometry
    - Trigonometry
    - Calculus
    - Numerical methods
    - Probability and statistics
-4. Physics
+5. Physics
    - Classical mechanics
    - Kinematics
    - Rigid body dynamics
    - Collisions and contact
    - Particle systems
    - Fluid dynamics
-5. Game Programming Concepts
+6. Game Programming Concepts
    - Game loops
    - Event handling and input processing
    - 2D and 3D rendering
@@ -47,13 +55,13 @@ The goal is to explore the engaging aspects of physics and mathematics by applyi
    - Audio programming
    - AI and pathfinding
    - Networking and multiplayer
-6. Game Engines and Libraries
+7. Game Engines and Libraries
    - Unreal Engine
    - Unity (for architectural understanding)
    - SDL
    - SFML
    - Boost C++ Libraries
-7. Building Your Game Engine
+8. Building Your Game Engine
    - Engine architecture and core components
    - Game loop and event handling system
    - Rendering and resource management systems
