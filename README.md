@@ -8,76 +8,70 @@ Are you ready to embark on this awe-inspiring journey? Let the adventure begin! 
 
 ## Goals
 
-The goal is to explore the engaging aspects of physics and mathematics by applying them to game development and real-life simulations. I hope this repository can serve as a guide and inspiration for others who are interested in game development or just to .
+- The goal is to explore the engaging aspects of physics and mathematics by applying them to game development and real-life simulations. I hope this repository can serve as a guide and inspiration for others who are interested in game development. Alternatively, unveil to students how math and physics become more enjoyable when applied to practical scenarios.
 
-## Learning Path
+- To create a habit of continuous learning and improvement, I commit to making at least one meaningful contribution to the project every single day. This daily commitment will help me stay on track and maintain momentum throughout my game development journey.
+
+- Demonstrate mastery and practical application of each subject by completing at least one project that covers a good portion of the concepts in that subject. This ensures a deeper understanding and hands-on experience with the topics, while also providing tangible results for my learning progress.
+
+## Learning Path / Progress
 
 1. C++ Fundamentals
-   - Syntax and data types
-   - Control structures
-   - Functions and recursion
-   - Object-oriented programming
-   - Memory management
-   - Standard Template Library (STL)
+   - [ ] Syntax and data types
+   - [ ] Control structures
+   - [ ] Functions and recursion
+   - [ ] Object-oriented programming
+   - [ ] Memory management
+   - [ ] Standard Template Library (STL)
 2. Data Structures and Algorithms
-   - Basic data structures (arrays, linked lists, stacks, queues)
-   - Trees and graphs
-   - Hash tables and dictionaries
-   - Sorting algorithms (quicksort, merge sort, heap sort)
-   - Searching algorithms (binary search, depth-first search, breadth-first search)
-   - Dynamic programming and greedy algorithms
-   - Graph algorithms (Dijkstra's, Kruskal's, Prim's)
+   - [ ] Basic data structures (arrays, linked lists, stacks, queues)
+   - [ ] Trees and graphs
+   - [ ] Hash tables and dictionaries
+   - [ ] Sorting algorithms (quicksort, merge sort, heap sort)
+   - [ ] Searching algorithms (binary search, depth-first search, breadth-first search)
+   - [ ] Dynamic programming and greedy algorithms
+   - [ ] Graph algorithms (Dijkstra's, Kruskal's, Prim's)
 3. Advanced C++ Concepts
-   - Templates and metaprogramming
-   - Exception handling
-   - Lambda functions
-   - Multithreading and concurrency
-   - Modern C++ features
+   - [ ] Templates and metaprogramming
+   - [ ] Exception handling
+   - [ ] Lambda functions
+   - [ ] Multithreading and concurrency
+   - [ ] Modern C++ features
 4. Mathematics
-   - Linear algebra
-   - Geometry
-   - Trigonometry
-   - Calculus
-   - Numerical methods
-   - Probability and statistics
+   - [ ] Linear algebra
+   - [ ] Geometry
+   - [ ] Trigonometry
+   - [ ] Calculus
+   - [ ] Numerical methods
+   - [ ] Probability and statistics
 5. Physics
-   - Classical mechanics
-   - Kinematics
-   - Rigid body dynamics
-   - Collisions and contact
-   - Particle systems
-   - Fluid dynamics
+   - [ ] Classical mechanics
+   - [ ] Kinematics
+   - [ ] Rigid body dynamics
+   - [ ] Collisions and contact
+   - [ ] Particle systems
+   - [ ] Fluid dynamics
 6. Game Programming Concepts
-   - Game loops
-   - Event handling and input processing
-   - 2D and 3D rendering
-   - Physics and collision detection
-   - Audio programming
-   - AI and pathfinding
-   - Networking and multiplayer
+   - [ ] Game loops
+   - [ ] Event handling and input processing
+   - [ ] 2D and 3D rendering
+   - [ ] Physics and collision detection
+   - [ ] Audio programming
+   - [ ] AI and pathfinding
+   - [ ] Networking and multiplayer
 7. Game Engines and Libraries
-   - Unreal Engine
-   - Unity (for architectural understanding)
-   - SDL
-   - SFML
-   - Boost C++ Libraries
+   - [ ] Unreal Engine
+   - [ ] Unity (for architectural understanding)
+   - [ ] SDL
+   - [ ] SFML
+   - [ ] Boost C++ Libraries
 8. Building Your Game Engine
-   - Engine architecture and core components
-   - Game loop and event handling system
-   - Rendering and resource management systems
-   - Physics, AI, and audio systems
-   - Optimization for performance and memory usage
-   - Tools for asset management, scripting, and level design
-
-## Progress
-
-- [x] C++ Fundamentals
-- [ ] Advanced C++ Concepts
-- [ ] Mathematics
-- [ ] Physics
-- [ ] Game Programming Concepts
-- [ ] Game Engines and Libraries
-- [ ] Building Your Game Engine
+   - [ ] Engine architecture and core components
+   - [ ] Game loop and event handling system
+   - [ ] Rendering and resource management systems
+   - [ ] Physics, AI, and audio systems
+   - [ ] Optimization for performance and memory usage
+   - [ ] Tools for asset management, scripting, and level design
 
 ## Resources and References
 
