@@ -2,7 +2,7 @@
 
 Welcome, fellow adventurer, to the magical realm of game development! 🧙‍♂️ This repository chronicles my thrilling quest to create a game engine from scratch, wielding the mighty powers of C++, mathematics, and physics. Together, we'll explore vast lands of knowledge, uncover hidden secrets, and conquer challenging obstacles on our journey to master the arcane arts of game programming. 🌟
 
-In this enchanted repository, you'll find ancient scrolls � (resources) and mystical artifacts 🔮 (projects) that will guide you through the treacherous landscape of game development. So, strap on your boots, grab your spellbook, and join me on this epic adventure to bring the fascinating worlds of physics, mathematics, and computer science to life through the spellbinding art of game creation! �
+In this enchanted repository, you'll find ancient scrolls 📚(resources) and mystical artifacts 🔮 (projects) that will guide you through the treacherous landscape of game development. So, strap on your boots, grab your spellbook, and join me on this epic adventure to bring the fascinating worlds of physics, mathematics, and computer science to life through the spellbinding art of game creation! 🎮
 
 Are you ready to embark on this awe-inspiring journey? Let the adventure begin! 🎉
 
