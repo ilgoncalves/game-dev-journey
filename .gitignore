@@ -1,0 +1,35 @@
+# Compiled Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debugging files
+*.dSYM/
+
+# Dependency directories
+/bin/
+/include/
+/lib/
+/lib64/
+
+# IDE files
+.vscode/
+*.vs/
+
+# Other generated files
+*.orig
+*.rej
+*.swp
