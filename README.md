@@ -99,7 +99,7 @@ Here is a list of projects that I've completed during my learning journey. Each 
 
 This folder contains utility scripts to help you streamline your workflow during your game development journey.
 
-## compile_and_run.sh
+## gpprun.sh
 
 This script simplifies the process of compiling and running C++ code. With just one command, it compiles your source code using the g++ compiler and then executes the compiled binary.
 
