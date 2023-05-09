@@ -114,7 +114,7 @@ This script simplifies the process of compiling and running C++ code. With just 
 2. Run the script with the following command:
 
 ```bash
-./compile_and_run.sh /path/to/your/source/file.cpp
+./gpprun.sh /path/to/your/source/file.cpp
 ```
 
 Replace `/path/to/your/source/file.cpp` with the path of C++ source file.
