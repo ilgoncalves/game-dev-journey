@@ -220,8 +220,18 @@ Here are some common use cases for the scope resolution operator `::` in C++:
 
 1. [Hello World](./helloWorld.cpp)
 
-- Description: Brief description of the project and its goals.
-- Concepts: List of key concepts demonstrated in the project.
-- Technologies: List of technologies, libraries, or tools used.
+- Description: Just a simple Hello World to print a name
 
-(Continue listing projects)
+2. [Exercise 1](./exercise1.cpp)
+
+   ```cpp
+   // Create a simple program that demonstrates your understanding of C++ syntax and data types. The program should:
+
+   // 1. Prompt the user to enter their first name, last name, and age.
+   // 2. Store the first name and last name as strings and the age as an integer.
+   // 3. Calculate the user's age in days, assuming 365 days per year. Store the result as a double.
+   // 4. Output a personalized message to the user, including their full name and age in days.
+   // 5. Use comments to explain the code and follow proper variable naming conventions.
+   // 6. Use constants where appropriate.
+   // 7. Include type casting when necessary.
+   ```
