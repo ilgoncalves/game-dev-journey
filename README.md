@@ -94,3 +94,31 @@ Here is a list of projects that I've completed during my learning journey. Each 
    - [Project 2](./projects/c++_fundamentals/project2)
 
 (Continue adding projects for other topics)
+
+# Utils
+
+This folder contains utility scripts to help you streamline your workflow during your game development journey.
+
+## compile_and_run.sh
+
+This script simplifies the process of compiling and running C++ code. With just one command, it compiles your source code using the g++ compiler and then executes the compiled binary.
+
+### Prerequisites
+
+- Make sure you have the g++ compiler installed on your system. You can check if it's installed by running `g++ --version` in your terminal.
+- Ensure that the `gpprun.sh` script has execute permissions. You can set the execute permission using `chmod +x gpprun.sh`.
+
+### How to Use
+
+1. Open a terminal and navigate to the directory containing the `gpprun.sh` script.
+2. Run the script with the following command:
+
+```bash
+./compile_and_run.sh /path/to/your/source/file.cpp
+```
+
+Replace `/path/to/your/source/file.cpp` with the path of C++ source file.
+
+3. The script will compile your code and, if successful, run the compiled binary.
+
+That's it! Now you can easily compile and run your C++ code with a single command.
