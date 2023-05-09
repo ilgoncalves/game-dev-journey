@@ -17,7 +17,7 @@ Are you ready to embark on this awe-inspiring journey? Let the adventure begin! 
 ## Learning Path / Progress
 
 1. C++ Fundamentals
-   - [ ] Syntax and data types
+   - [x] [Syntax and data types](./projects/c%2B%2B_fundamentals/syntax_and_data_types/README.md)
    - [ ] Control structures
    - [ ] Functions and recursion
    - [ ] Object-oriented programming
