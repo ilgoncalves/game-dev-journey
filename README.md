@@ -19,7 +19,7 @@ Are you ready to embark on this awe-inspiring journey? Let the adventure begin! 
 1. C++ Fundamentals
    - [x] [Syntax and data types](./projects/c%2B%2B_fundamentals/syntax_and_data_types/README.md)
    - [x] [Control structures](./projects/c%2B%2B_fundamentals/control_structures/README.md)
-   - [ ] Functions and recursion
+   - [ ] [Functions and recursion](./projects/c%2B%2B_fundamentals/functions_and_recursion/README.md)
    - [ ] Object-oriented programming
    - [ ] Memory management
    - [ ] Standard Template Library (STL)
