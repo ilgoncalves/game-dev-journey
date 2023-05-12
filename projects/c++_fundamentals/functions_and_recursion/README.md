@@ -237,6 +237,42 @@ Note: It's crucial to have a base case in recursive functions to prevent infinit
 
 In this example, we use a lambda function as a custom comparator for the `std::sort` function. The lambda function takes two arguments and returns `true` if the first argument is less than the second.
 
+## Notes
+
+In C++, both `&` and `*` are used in the context of pointers, but they serve different purposes.
+
+`&`: This is the address-of operator. When placed before a variable, it returns the memory address of that variable. For example:
+
+```cpp
+  int x = 10;
+  int* ptr = &x;
+```
+
+Here, `&x` gets the memory address of `x` and stores it in the pointer `ptr`.
+
+`*`: This is the dereference operator when used in an expression, and the pointer declaration operator when used in a type.
+
+- When used in an expression, it fetches the value stored at the memory address held by a pointer. For example:
+
+  ```cpp
+    int x = 10;
+
+    int* ptr = &x;
+    int y = *ptr; // y is now 10
+  ```
+
+  Here, `*ptr` fetches the value stored at the memory location that `ptr` points to.
+
+- When used in a type, it declares a pointer variable. For example:
+
+  ```cpp
+    int* ptr;
+  ```
+
+  Here, `int* ptr;` declares a pointer to an integer.
+
+  So in summary: & is used to get the memory address of a variable, and \* is used to either declare a pointer variable or dereference a pointer.
+
 ## Functions Exercises
 
 1. [Exercise 1: Function Overloading]()
