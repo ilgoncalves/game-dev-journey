@@ -277,6 +277,27 @@ Here, `&x` gets the memory address of `x` and stores it in the pointer `ptr`.
 
 1. [Exercise 1: Function Overloading]()
    Write two functions with the same name `printArea`. One function takes the radius of a circle (a `double`) and prints the area of the circle. The other function takes the length and width of a rectangle (two `doubles`) and prints the area of the rectangle. In the main function, call both versions of `printArea`.
+#include <iostream>
+
+// Function to calculate the factorial of a number
+long long factorial(int n) {
+    // Base case: factorial of 0 is 1
+    if (n == 0) {
+        return 1;
+    }
+    // Recursive case: n! = n * (n-1)!
+    else {
+        return n * factorial(n-1);
+    }
+}
+
+int main() {
+    int num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+    std::cout << "Factorial of " << num << " is " << factorial(num) << std::endl;
+    return 0;
+}
 
 2. [Exercise 2: Default Arguments]()
    Write a function `power` that takes two `int` parameters: `base` and `exponent`. The `exponent` parameter should have a default value of `2`. The `power` function should return the `base` raised to the `exponent`. In the `main` function, call `power` with two arguments and with one argument.
