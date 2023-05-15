@@ -278,7 +278,7 @@ Here, `&x` gets the memory address of `x` and stores it in the pointer `ptr`.
 1. [Exercise 1: Function Overloading](./function_overloading.cpp)
    Write two functions with the same name `printArea`. One function takes the radius of a circle (a `double`) and prints the area of the circle. The other function takes the length and width of a rectangle (two `doubles`) and prints the area of the rectangle. In the main function, call both versions of `printArea`.
 
-2. [Exercise 2: Default Arguments]()
+2. [Exercise 2: Default Arguments](./default_arguments)
    Write a function `power` that takes two `int` parameters: `base` and `exponent`. The `exponent` parameter should have a default value of `2`. The `power` function should return the `base` raised to the `exponent`. In the `main` function, call `power` with two arguments and with one argument.
 
 3. [Exercise 3: Passing by Reference]()
