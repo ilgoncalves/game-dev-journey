@@ -287,7 +287,7 @@ Here, `&x` gets the memory address of `x` and stores it in the pointer `ptr`.
 4. [Exercise 4: Inline Functions](./inlineFunctions.cpp)
    Write an inline function `max` that takes two `int` parameters and returns the larger one. In the `main` function, call `max` with two different integers and print the result.
 
-5. [Exercise 5: Function Pointers]()
+5. [Exercise 5: Function Pointers](./functionPointer.cpp)
    Create a function pointer for a function that takes two `int` parameters and returns an `int`. Assign the `add` function to the function pointer, and then use the function pointer to call add and print the result.
 
 6. [Exercise 6: Lambda Functions]()
