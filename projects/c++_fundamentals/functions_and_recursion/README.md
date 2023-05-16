@@ -275,13 +275,13 @@ Here, `&x` gets the memory address of `x` and stores it in the pointer `ptr`.
 
 ## Functions Exercises
 
-1. [Exercise 1: Function Overloading](./function_overloading.cpp)
+1. [Exercise 1: Function Overloading](./functionOverloading.cpp)
    Write two functions with the same name `printArea`. One function takes the radius of a circle (a `double`) and prints the area of the circle. The other function takes the length and width of a rectangle (two `doubles`) and prints the area of the rectangle. In the main function, call both versions of `printArea`.
 
-2. [Exercise 2: Default Arguments](./default_arguments.cpp)
+2. [Exercise 2: Default Arguments](./defaultArguments.cpp)
    Write a function `power` that takes two `int` parameters: `base` and `exponent`. The `exponent` parameter should have a default value of `2`. The `power` function should return the `base` raised to the `exponent`. In the `main` function, call `power` with two arguments and with one argument.
 
-3. [Exercise 3: Passing by Reference]()
+3. [Exercise 3: Passing by Reference](./passingByRreference.cpp)
    Write a function `swap` that takes two `int` parameters by reference and swaps their values. In the `main` function, create two `int` variables, print their values, call `swap` on them, and then print their values again to confirm that they were swapped.
 
 4. [Exercise 4: Inline Functions]()
