@@ -284,7 +284,7 @@ Here, `&x` gets the memory address of `x` and stores it in the pointer `ptr`.
 3. [Exercise 3: Passing by Reference](./passingByRreference.cpp)
    Write a function `swap` that takes two `int` parameters by reference and swaps their values. In the `main` function, create two `int` variables, print their values, call `swap` on them, and then print their values again to confirm that they were swapped.
 
-4. [Exercise 4: Inline Functions]()
+4. [Exercise 4: Inline Functions](./inlineFunctions.cpp)
    Write an inline function `max` that takes two `int` parameters and returns the larger one. In the `main` function, call `max` with two different integers and print the result.
 
 5. [Exercise 5: Function Pointers]()
