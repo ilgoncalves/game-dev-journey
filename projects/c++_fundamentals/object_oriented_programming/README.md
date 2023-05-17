@@ -93,7 +93,77 @@ These concepts are foundational to understanding OOP. As we proceed through the 
 
 ### Encapsulation
 
-...
+Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It refers to the bundling of data, and the methods that operate on that data, into a single unit known as a class.
+
+Encapsulation can be considered as a protective shield that prevents the data from being accessed by the code outside this shield (i.e., outside the class).
+
+#### Access specifiers
+
+In C++, we have three types of access specifiers: `public`, `private`, and `protected`.
+
+- **`public`**: Members (attributes and methods) declared under this specifier can be accessed from anywhere.
+- **`private`**: Members declared as private can only be accessed within the same class (i.e., outside access is not allowed).
+- **`protected`**: Members declared as protected can be accessed within the same class and in its child (or derived) classes.
+
+Here's an example:
+
+```cpp
+  class Car {
+    private:
+      int speed; // private attribute
+
+    public:
+      int getSpeed() { // public method
+        return speed;
+      }
+
+      void setSpeed(int s) { // public method
+        if (s >= 0) {
+          speed = s;
+        } else {
+          std::cout << "Speed cannot be negative.\n";
+        }
+      }
+  };
+```
+
+In this class, `speed` is a private attribute. This means it cannot be accessed directly from outside the class. Instead, we provide public "getter" and "setter" methods (i.e., `getSpeed` and `setSpeed`) that allow controlled access to the private attribute.
+
+This is a simple example of encapsulation: we are hiding the details of how the speed attribute is managed inside the class, and only providing a controlled public interface for interacting with it.
+
+The `protected` access specifier is another important aspect of encapsulation in C++. It is particularly relevant when it comes to inheritance, which is another key concept in object-oriented programming.
+
+While `private` members of a class are accessible only within the context of that class, `protected` members are accessible within the context of the class and also within any class derived (inherited) from it.
+
+Here's an example to illustrate:
+
+```cpp
+  class Vehicle {
+    protected:
+      int speed;
+
+    public:
+      void setSpeed(int s) {
+        if (s >= 0) {
+          speed = s;
+        } else {
+          std::cout << "Speed cannot be negative.\n";
+        }
+      }
+  };
+
+  class Car : public Vehicle {
+    public:
+      void increaseSpeed(int increment) {
+        speed += increment; // This is valid because speed is protected in Vehicle
+        std::cout << "Speed is now: " << speed << "\n";
+      }
+  };
+```
+
+In the code above, `speed` is a `protected` member of the `Vehicle` class. This means it's accessible not only within the `Vehicle` class, but also within any class that is derived from `Vehicle`, such as `Car`. That's why we're able to directly modify `speed` within the `increaseSpeed` method of the `Car` class.
+
+On the other hand, `speed` would not be accessible directly from outside these classes, or from any non-derived class, maintaining the principles of encapsulation. We're still protecting and controlling access to the data.
 
 ### Inheritance
 
