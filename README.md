@@ -20,7 +20,7 @@ Are you ready to embark on this awe-inspiring journey? Let the adventure begin! 
    - [x] [Syntax and data types](./projects/c%2B%2B_fundamentals/syntax_and_data_types/README.md)
    - [x] [Control structures](./projects/c%2B%2B_fundamentals/control_structures/README.md)
    - [x] [Functions and recursion](./projects/c%2B%2B_fundamentals/functions_and_recursion/README.md)
-   - [ ] Object-oriented programming
+   - [ ] [Object-oriented programming](./projects/c%2B%2B_fundamentals/object_oriented_programming/README.md)
    - [ ] Memory management
    - [ ] Standard Template Library (STL)
 2. Data Structures and Algorithms
