@@ -265,7 +265,114 @@ There are a few more aspects of inheritance in C++ that are worth knowing:
 
 ### **Polymorphism**
 
-...
+Polymorphism is one of the fundamental principles of Object-Oriented Programming. The word Polymorphism comes from Greek and means having multiple forms. In C++ and other programming languages, Polymorphism allows objects of different classes to be treated as objects of a common superclass. This becomes particularly useful when classes share common methods but may implement them differently.
+
+In the context of C++, we can have two types of Polymorphism:
+
+1. **Compile-time Polymorphism**: This is also known as static, early or overloading polymorphism. It is achieved by function overloading or operator overloading.
+2. **Run-time Polymorphism**: This is also known as dynamic, late or overriding polymorphism. It is achieved by Function Overriding, i.e., using virtual functions, where the function to be invoked is determined at run time.
+
+Here's a brief overview of both types:
+
+#### **Function Overloading (Compile-Time Polymorphism)**
+
+Function overloading is a feature in C++ where two or more functions can have the same name but different parameters. Function overloading can be considered as an example of polymorphism feature in C++. The decision of which function to call is made at compile time. Here's an example:
+
+```cpp
+  #include<iostream>
+  using namespace std;
+
+  class Add {
+  public:
+      int sum(int num1, int num2){
+          return num1+num2;
+      }
+
+      int sum(int num1, int num2, int num3){
+          return num1+num2+num3;
+      }
+  };
+
+  int main() {
+      Add obj;
+      cout<<obj.sum(10,20)<<endl;
+      cout<<obj.sum(11,22,33)<<endl;
+      return 0;
+  }
+```
+
+#### **Virtual Functions (Run-Time Polymorphism)**
+
+A virtual function is a member function in the base class that we expect to redefine in derived classes. When a class contains a virtual function, it maintains a vtable (virtual table) which is simply a table of function pointers. The correct function will then be resolved at runtime, hence runtime polymorphism. Here's an example:
+
+```cpp
+  #include<iostream>
+  using namespace std;
+
+  class Base {
+  public:
+      virtual void display(){
+          cout<<"Display Base"<<endl;
+      }
+  };
+
+  class Derived : public Base {
+  public:
+      void display(){
+          cout<<"Display Derived"<<endl;
+      }
+  };
+
+  int main() {
+      Base* baseptr;
+      Derived derivedobj;
+      baseptr = &derivedobj;
+      baseptr->display(); // prints "Display Derived"
+
+      return 0;
+  }
+```
+
+In this example, baseptr is a pointer of type Base, but we assign it the address of the derivedobj object. When we call baseptr->display(), it runs the version of display() in the Derived class, not the one in Base. This is run-time polymorphism.
+
+Beyond these two types of polymorphism (compile-time and run-time), you should also be aware of:
+
+#### **Abstract Classes and Pure Virtual Functions**
+
+An abstract class in C++ is a class that has at least one pure virtual function (a virtual function that is set to 0). Abstract classes are used when you want to provide a common interface for different classes. If a class contains at least one pure virtual function, then it becomes abstract. No objects of an abstract class can be created. Abstract classes are mainly used for Upcasting, and you will learn more about them when you dive deeper into inheritance and polymorphism.
+
+Here's an example:
+
+```cpp
+  #include <iostream>
+  using namespace std;
+
+  class AbstractClass {
+    public:
+        // pure virtual function providing interface framework.
+        virtual int getValue() = 0;
+  };
+
+  class ConcreteClass : public AbstractClass {
+    public:
+        // An implementation of the pure virtual function.
+        int getValue() {
+          return 5;
+        }
+  };
+
+  int main() {
+    ConcreteClass cc;
+
+    cout << "Value: " << cc.getValue() << endl;
+
+    return 0;
+  }
+```
+
+In this example, `AbstractClass` provides a pure virtual function `getValue()`. Any class that inherits from `AbstractClass` will have to provide an implementation for `getValue()`. The `ConcreteClass` provides this implementation and hence can be instantiated. The `AbstractClass` cannot be instantiated because it does not provide an implementation for `getValue()`.
+
+Overall, the concept of polymorphism is a crucial part of a robust, object-oriented design, contributing to the creation of more maintainable and adaptable code. Understanding and applying the principles of polymorphism will allow to create structures where objects can interact with each other in dynamic ways, and where extending functionality can be achieved more efficiently.
 
 ### **Abstraction**
 
