@@ -167,7 +167,101 @@ On the other hand, `speed` would not be accessible directly from outside these c
 
 ### Inheritance
 
-...
+In object-oriented programming, inheritance is a mechanism that allows us to create a new class using the properties and methods of an existing class while adding new functionality or overriding the existing functionality. This facilitates code reusability and organization.
+
+The existing class is known as the base class, or parent class, and the new class is known as the derived class, or child class. Inheritance forms a hierarchy of classes.
+
+In C++, inheritance is declared in the derived class, like this:
+
+```cpp
+  class DerivedClass : access-specifier BaseClass
+```
+
+The `access-specifier` is optional and can be `public`, `protected`, or `private`, and it specifies how the members of the base class are accessed in the derived class.
+
+Here's a simple example to illustrate:
+
+```cpp
+  class Vehicle { // base class
+    public:
+      void generalVehicleMethod() {
+        std::cout << "This is a method from the Vehicle class.\n";
+      }
+  };
+
+  class Car : public Vehicle { // derived class
+    public:
+      void carMethod() {
+        std::cout << "This is a method from the Car class.\n";
+      }
+  };
+```
+
+In this example, `Vehicle` is the base class, and `Car` is the derived class. The `Car` class has inherited the `generalVehicleMethod` from `Vehicle`, in addition to having its own `carMethod`.
+
+You can use these methods as follows:
+
+```cpp
+  int main() {
+    Car myCar;
+    myCar.carMethod(); // Accessible, as this is a method of the Car class.
+    myCar.generalVehicleMethod(); // Accessible, as this method is inherited from the Vehicle class.
+    return 0;
+  }
+```
+
+The output would be:
+
+```
+  This is a method from the Car class.
+  This is a method from the Vehicle class.
+```
+
+This is a basic example. Inheritance in C++ can get quite complex, as you can have multiple levels of inheritance (a class derived from a class derived from another class, and so forth), and even multiple inheritance (a class derived from more than one base class).
+
+There are a few more aspects of inheritance in C++ that are worth knowing:
+
+1. **Protected members**: We've already discussed public and private members. There's a third category, protected members, that behaves like private members but with one key difference: protected members of a class are accessible in the derived classes.
+
+2. **Multiple Inheritance**: In C++, a class can be derived from more than one base class. This is known as multiple inheritance, and it's a feature that's not available in all object-oriented languages. It's declared like this:
+
+   ```cpp
+     class DerivedClass : access-specifier BaseClass1, access-specifier BaseClass2...
+   ```
+
+   Here's an example:
+
+   ```cpp
+     class BaseClass1 {
+       public:
+         void methodFromBaseClass1() {
+             std::cout << "Method from BaseClass1.\n";
+         }
+     };
+
+     class BaseClass2 {
+       public:
+         void methodFromBaseClass2() {
+             std::cout << "Method from BaseClass2.\n";
+         }
+     };
+
+     class DerivedClass : public BaseClass1, public BaseClass2 {
+       public:
+         void methodFromDerivedClass() {
+             std::cout << "Method from DerivedClass.\n";
+         }
+     };
+
+   ```
+
+   In this example, DerivedClass inherits from both BaseClass1 and BaseClass2.
+
+3. **Virtual Functions and Polymorphism**: These are powerful tools in C++ that allow methods in the derived class to override methods in the base class, and for methods to behave differently depending on what kind of object they're called on. These are big topics in themselves and are often covered under their own headings.
+
+4. **Abstract Classes and Pure Virtual Functions**: These are used when you want to define a base class that isn't intended to be instantiated itself, but only to serve as a base class for other classes. A class with one or more pure virtual functions is considered an abstract class, and it cannot be used to instantiate objects.
+
+5. **Access Control and Inheritance**: Access control with private, public, and protected members is an important aspect of inheritance in C++. It's important to know how these access specifiers affect what members of the base class the derived class can access.
 
 ### Polymorphism
 
