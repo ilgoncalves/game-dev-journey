@@ -203,6 +203,50 @@ When it comes to `obj`, it's worth noting that `obj` is not a keyword or concept
 
 In this code, `structInstance` is an object of type `MyStruct`, and `classInstance` is an object of type `MyClass`. Both `struct` and `class` define types, and an object is an instance of a type.
 
+`Struct` and `class` can sometimes be a matter of coding style or convention. However, there are certain use cases where one might be more appropriate than the other:
+
+1. **Use `struct` for simple data structures**: If you are creating a data structure that only holds data and does not require any complex behavior or encapsulation, you might choose to use a `struct`. This is because `struct` members are public by default, so using a `struct` signals to other programmers that this is a simple data structure without much associated behavior. For example, you might use a `struct` to represent a 2D point:
+
+   ```cpp
+     struct Point {
+       double x;
+       double y;
+     };
+
+     Point p = {1.0, 2.0};  // Create a Point struct and assign values
+   ```
+
+2. **Use `class` for objects that require encapsulation or complex behavior**: If you are creating an object that requires methods, encapsulation, or other complex behavior, you might choose to use a `class`. This is because `class` members are private by default, so using a `class` signals to other programmers that this object has associated behavior and that they should interact with it through its public methods. For example, you might use a `class` to represent a bank account:
+
+   ```cpp
+     class BankAccount {
+     private:
+       double balance;
+
+     public:
+       BankAccount(double initial_balance) : balance(initial_balance) { }
+
+       void deposit(double amount) {
+           if (amount > 0) {
+               balance += amount;
+           }
+       }
+
+       void withdraw(double amount) {
+           if (amount <= balance && amount > 0) {
+               balance -= amount;
+           }
+       }
+
+       double get_balance() const {
+           return balance;
+       }
+     };
+
+   ```
+
+Remember, these are general guidelines, not strict rules. Both struct and class in C++ are flexible enough to be used in a variety of situations, and in many cases, the choice between them is largely a matter of preference. The important thing is to write code that is clear and understandable.
+
 ### **Inheritance**
 
 In object-oriented programming, inheritance is a mechanism that allows us to create a new class using the properties and methods of an existing class while adding new functionality or overriding the existing functionality. This facilitates code reusability and organization.
