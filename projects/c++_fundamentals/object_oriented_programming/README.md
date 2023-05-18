@@ -20,7 +20,7 @@ In C++, we can define our own types using classes. A class defines a blueprint f
 12. [Exception Handling](#exception-handling)
 13. [Operator Overloading](#operator-overloading)
 
-### Introduction to OOP
+### **Introduction to OOP**
 
 Object-Oriented Programming (OOP) is a paradigm that provides a means of structuring programs so that properties and behaviors are bundled into individual objects. This programming style came into prominence in the 1980s with the advent of languages like C++, and it represented a significant shift away from procedural programming.
 
@@ -46,7 +46,7 @@ Over the next sections, we will delve deeper into each of these principles and t
 
 Next Topic: [Classes and Objects](#classes-and-objects)
 
-### Classes and Objects
+### **Classes and Objects**
 
 In the context of Object-Oriented Programming (OOP), a class can be thought of as a blueprint for creating objects. An object, in turn, is an instance of a class.
 
@@ -91,7 +91,7 @@ Using our `Car` class from above, we can create an object like this:
 
 These concepts are foundational to understanding OOP. As we proceed through the subsequent sections, we'll explore more complex aspects of classes and objects, including constructors, destructors, and access specifiers.
 
-### Encapsulation
+### **Encapsulation**
 
 Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It refers to the bundling of data, and the methods that operate on that data, into a single unit known as a class.
 
@@ -165,7 +165,7 @@ In the code above, `speed` is a `protected` member of the `Vehicle` class. This 
 
 On the other hand, `speed` would not be accessible directly from outside these classes, or from any non-derived class, maintaining the principles of encapsulation. We're still protecting and controlling access to the data.
 
-### Inheritance
+### **Inheritance**
 
 In object-oriented programming, inheritance is a mechanism that allows us to create a new class using the properties and methods of an existing class while adding new functionality or overriding the existing functionality. This facilitates code reusability and organization.
 
@@ -263,39 +263,39 @@ There are a few more aspects of inheritance in C++ that are worth knowing:
 
 5. **Access Control and Inheritance**: Access control with private, public, and protected members is an important aspect of inheritance in C++. It's important to know how these access specifiers affect what members of the base class the derived class can access.
 
-### Polymorphism
+### **Polymorphism**
 
 ...
 
-### Abstraction
+### **Abstraction**
 
 ...
 
-### Interfaces and Abstract Classes
+### **Interfaces and Abstract Classes**
 
 ...
 
-### Multiple Inheritance
+### **Multiple Inheritance**
 
 ...
 
-### Virtual Functions / Methods
+### **Virtual Functions / Methods**
 
 ...
 
-### Friend Functions
+### **Friend Functions**
 
 ...
 
-### Templates
+### **Templates**
 
 ...
 
-### Exception Handling
+### **Exception Handling**
 
 ...
 
-### Operator Overloading
+### **Operator Overloading**
 
 ...
 
