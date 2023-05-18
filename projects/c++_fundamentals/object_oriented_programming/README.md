@@ -9,16 +9,17 @@ In C++, we can define our own types using classes. A class defines a blueprint f
 1. [Introduction to OOP](#introduction-to-oop)
 2. [Classes and Objects](#classes-and-objects)
 3. [Encapsulation](#encapsulation)
-4. [Inheritance](#inheritance)
-5. [Polymorphism](#polymorphism)
-6. [Abstraction](#abstraction)
-7. [Interfaces and Abstract Classes](#interfaces-and-abstract-classes)
-8. [Multiple Inheritance](#multiple-inheritance)
-9. [Virtual Functions / Methods](#virtual-functions-methods)
-10. [Friend Functions](#friend-functions)
-11. [Templates](#templates)
-12. [Exception Handling](#exception-handling)
-13. [Operator Overloading](#operator-overloading)
+4. [Classes vs Structs](#classes-vs-structs)
+5. [Inheritance](#inheritance)
+6. [Polymorphism](#polymorphism)
+7. [Abstraction](#abstraction)
+8. [Interfaces and Abstract Classes](#interfaces-and-abstract-classes)
+9. [Multiple Inheritance](#multiple-inheritance)
+10. [Virtual Functions / Methods](#virtual-functions-methods)
+11. [Friend Functions](#friend-functions)
+12. [Templates](#templates)
+13. [Exception Handling](#exception-handling)
+14. [Operator Overloading](#operator-overloading)
 
 ### **Introduction to OOP**
 
@@ -164,6 +165,43 @@ Here's an example to illustrate:
 In the code above, `speed` is a `protected` member of the `Vehicle` class. This means it's accessible not only within the `Vehicle` class, but also within any class that is derived from `Vehicle`, such as `Car`. That's why we're able to directly modify `speed` within the `increaseSpeed` method of the `Car` class.
 
 On the other hand, `speed` would not be accessible directly from outside these classes, or from any non-derived class, maintaining the principles of encapsulation. We're still protecting and controlling access to the data.
+
+### **Classes vs Structs**
+
+In C++, both `struct` and `class` are user-defined data types that are essentially the same under the hood. They both allow you to define methods and properties and to create instances of those types. However, there are some default differences between them:
+
+1. **Access specifier**: The most fundamental difference between a `struct` and `class` in C++ is the default access level. For a struct, members are public by default; for a `class`, members are private by default.
+
+   ```cpp
+     struct MyStruct {
+       int x;  // This is public by default
+     };
+
+     class MyClass {
+       int x;  // This is private by default
+     };
+   ```
+
+2. **Inheritance**: By default, base classes are inherited as public for `struct`, and as private for `class`.
+
+   ```cpp
+     struct Base { };
+     struct Derived : Base { };  // Base is inherited as public by default
+
+     class Base2 { };
+     class Derived2 : Base2 { };  // Base2 is inherited as private by default
+   ```
+
+Despite these differences, in practice, `struct` is often used for simple data structures where the members are typically public, and `class` is used when you want more complex behavior and encapsulation.
+
+When it comes to `obj`, it's worth noting that `obj` is not a keyword or concept in C++. If by `obj` you are referring to objects, then both a `struct` and a `class` can be used to instantiate objects in C++:
+
+```cpp
+  MyStruct structInstance;
+  MyClass classInstance;
+```
+
+In this code, `structInstance` is an object of type `MyStruct`, and `classInstance` is an object of type `MyClass`. Both `struct` and `class` define types, and an object is an instance of a type.
 
 ### **Inheritance**
 
