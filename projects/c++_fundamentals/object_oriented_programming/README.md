@@ -502,7 +502,79 @@ If you understand these aspects of abstraction, then you have a good grasp of th
 
 ### **Multiple Inheritance**
 
-...
+Multiple inheritance is a feature of some object-oriented programming languages in which a class (or an 'object' in prototyping-based languages) can inherit characteristics and features from more than one superclass. However, it's worth noting that not all languages support multiple inheritance. For instance, Java doesn't support multiple inheritance but C++ does.
+
+C++ allows a class to inherit from more than one class. Here's an example of how it works:
+
+```cpp
+    class Base1 {
+    public:
+      void display() const{
+          std::cout << "Base1::display()\n";
+      }
+    };
+
+    class Base2 {
+    public:
+      void display() const{
+          std::cout << "Base2::display()\n";
+      }
+    };
+
+    class Derived: public Base1, public Base2 {
+    public:
+      void display() const{
+          Base1::display();
+          Base2::display();
+      }
+    };
+
+    int main() {
+      Derived d;
+      d.display();  // Outputs: Base1::display() Base2::display()
+    }
+```
+
+In this example, the `Derived` class inherits from both `Base1` and `Base2`. Therefore, it has access to the `display()` function of both base classes.
+
+While multiple inheritance can be useful, it can also lead to a lot of confusion when two base classes have methods with the same names, or when a class inherits from two classes that have fields with the same names. This is known as the "Diamond Problem". C++ resolves this issue through the use of "virtual inheritance".
+
+Despite its power, multiple inheritance is often seen as a source of complexity and ambiguity, and so it is typically avoided in practice. Instead, developers often use interfaces, or abstract classes, and composition to achieve similar benefits in a more controlled and less error-prone way.
+
+#### Real world example
+
+Imagine we're building a game, and we have two base classes, `Movable` and `Drawable`.
+
+- **`Movable`** has the characteristics of anything that can move in our game, such as position, speed, direction, and the method `move()`.
+- **`Drawable`**, on the other hand, is anything that can be drawn on the screen. It has a sprite, color, and a method `draw()`.
+  Now, we're ready to implement a Player class. The player of our game can both move and be drawn on the screen, so it makes sense to inherit from both `Movable` and `Drawable`.
+
+Here's a rough sketch of what that might look like in C++ code:
+
+```cpp
+  class Movable {
+  public:
+    // Position, speed, direction...
+    virtual void move() {
+        // Code to move the object...
+    }
+  };
+
+  class Drawable {
+  public:
+    // Sprite, color...
+    virtual void draw() {
+        // Code to draw the object...
+    }
+  };
+
+  class Player : public Movable, public Drawable {
+    // The player class is both Movable and Drawable.
+    // It inherits all public methods from both classes.
+  };
+```
+
+In this example, the `Player` class is a specific type of object that is both `Movable` and `Drawable`. Therefore, it makes sense for it to inherit from both of these classes.
 
 ### **Friend Functions**
 
