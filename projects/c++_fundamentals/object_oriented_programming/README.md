@@ -13,13 +13,11 @@ In C++, we can define our own types using classes. A class defines a blueprint f
 5. [Inheritance](#inheritance)
 6. [Polymorphism](#polymorphism)
 7. [Abstraction](#abstraction)
-8. [Interfaces and Abstract Classes](#interfaces-and-abstract-classes)
-9. [Multiple Inheritance](#multiple-inheritance)
-10. [Virtual Functions / Methods](#virtual-functions-methods)
-11. [Friend Functions](#friend-functions)
-12. [Templates](#templates)
-13. [Exception Handling](#exception-handling)
-14. [Operator Overloading](#operator-overloading)
+8. [Multiple Inheritance](#multiple-inheritance)
+9. [Friend Functions](#friend-functions)
+10. [Templates](#templates)
+11. [Exception Handling](#exception-handling)
+12. [Operator Overloading](#operator-overloading)
 
 ### **Introduction to OOP**
 
@@ -458,17 +456,51 @@ Overall, the concept of polymorphism is a crucial part of a robust, object-orien
 
 ### **Abstraction**
 
-...
+`Abstraction` is one of the crucial pillars of OOP, and it works hand in hand with encapsulation. While encapsulation is about hiding the internal states and implementation details, abstraction is about simplifying complex systems by breaking them down into smaller, more manageable parts, and exposing only the relevant details to the user.
 
-### **Interfaces and Abstract Classes**
+Abstraction in C++ is mostly achieved through interfaces and abstract classes. We have discussed abstract classes a bit in the previous section, let's talk about them a bit more:
 
-...
+#### **Abstract Classes**
+
+An abstract class is a class that cannot be instantiated and is meant to be subclassed. It can have data members, methods, and constructors, but it also contains at least one pure virtual function. Pure virtual functions are declared in the abstract class and can be overridden in the derived class. The purpose of an abstract class is to provide an appropriate base class from which other classes can inherit. Abstract classes cannot be used to instantiate objects and serves only as an interface.
+
+Here's an example:
+
+```cpp
+  class AbstractEmployee
+  {
+      virtual void AskForPromotion() = 0; // Pure virtual function makes this class Abstract class
+  };
+
+  class Developer : public AbstractEmployee
+  {
+  public:
+      void AskForPromotion()
+      {
+          cout << "I want a promotion!" << endl;
+      }
+  };
+```
+
+In this example, `AskForPromotion` is a pure virtual function in the `AbstractEmployee` class. `Developer`, which is a subclass of `AbstractEmployee`, provides an implementation of `AskForPromotion`. Notice that `AbstractEmployee` can't be used to create an object in the main function, but `Developer` can because it is not an abstract class.
+
+The idea of abstraction is to focus on what an object does instead of how it does it. It provides you with a general idea or a blueprint of what the object should do, but the how part is usually implemented in subclasses. This allows you to make your code more generic and more easily adaptable to future changes. You can modify or extend the subclasses without affecting the superclass's abstraction.
+
+Understanding and using abstraction correctly can result in code that is more organized, easier to debug, maintain, and extend.
+
+The concept of abstraction in object-oriented programming (OOP) is primarily tied to the ideas of abstract classes and interfaces, as well as encapsulation, which we have already discussed.
+
+However, there are a few additional aspects you might want to consider:
+
+1. **Functional Abstraction**: This is not limited to OOP. The idea is that a function's implementation is hidden (or abstracted away) from the user. The user only needs to know what input the function takes and what output it produces. A common example of this is using libraries or built-in functions where the implementation details are unknown to you, but you can still use them because you know what they do.
+
+2. **Data Abstraction**: This is again a principle closely tied to encapsulation. In OOP, a class provides a structure to abstract away data handling's complexity. When you create an object of a class, you do not need to understand how data is stored or manipulated within the class. You just need to know what methods and properties are exposed to you.
+
+3. **Abstraction in Design**: The principle of abstraction is also heavily used in software design. Complex systems can be broken down into smaller, more manageable components or modules through abstraction. Each of these components can be understood, designed, and developed independently of the others. This modularity leads to better maintainability and flexibility of the software.
+
+If you understand these aspects of abstraction, then you have a good grasp of the concept as it applies to OOP and software development in general. Next, we can move on to the last pillar of OOP: `Association`, `Aggregation`, and `Composition`.
 
 ### **Multiple Inheritance**
-
-...
-
-### **Virtual Functions / Methods**
 
 ...
 
