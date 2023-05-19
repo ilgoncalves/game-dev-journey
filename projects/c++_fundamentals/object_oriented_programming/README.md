@@ -672,4 +672,66 @@ Remember, the usage of friend functions can break the principle of encapsulation
 
 ...
 
+### Notes
+
+In C++, both stack and heap allocations are available. new is used when you want to allocate memory on the heap.
+
+Here's an example of new:
+
+```cpp
+  House* myHouse = new House("123 Main St.");
+```
+
+Here, `myHouse` is a pointer to a `House` object allocated on the heap. You'll need to use the `->` operator to access its members.
+
+The original example:
+
+```cpp
+  House myHouse("123 Main St.");
+```
+
+In this case, `myHouse` is a `House` object allocated on the stack. You access its members using the `.` operator.
+
+Stack allocation is automatically managed: when `myHouse` goes out of scope, its destructor is automatically called and its memory is reclaimed.
+
+Heap allocation is manual: you must eventually call `delete` on a heap-allocated object to reclaim its memory, or you will have a memory leak.
+
+Generally, stack allocation is simpler and more efficient (since you don't have to manually manage memory), but it's limited by the size of the stack, which is relatively small. Heap allocation allows for dynamic memory management, which is essential for working with data structures of varying or large size. However, it requires manual memory management and is a common source of bugs.
+
+So, to sum it up, whether you use `new` or not depends on whether you want to allocate memory on the heap (use `new`) or on the stack (don't use `new`).
+
+#### Constructor notes:
+
+In C++, there is a distinct difference between initialization and assignment.
+
+When you do:
+
+```cpp
+  class MyClass {
+    int value;
+  public:
+    MyClass(int v) {
+        value = v;
+    }
+  };
+```
+
+You are first default-constructing `value` (which doesn't do anything for primitive types like `int`, but could do something for more complex types), and then assigning `v` to `value`. This is generally less efficient than initializing `value` directly with the value of `v`.
+
+Instead, when you use an initialization list, like this:
+
+```cpp
+  class MyClass {
+    int value;
+  public:
+    MyClass(int v) : value(v) {}
+  };
+```
+
+You are directly initializing `value` with `v`, which is generally more efficient. For certain types of members (like `const` members, reference members, or members without default constructors), you must use an initialization list.
+
+Additionally, there's a difference in naming. In the constructor body, `value = v` would work fine, but if you tried `value = value`, it would not do what you want -- `value` on the right hand side of `=` would refer to the member `value`, not the constructor parameter `value`. In contrast, in an initialization list, `value(v)` or `value(value)` unambiguously refers to the member `value` and the constructor parameter, respectively. It's still better to use different names to avoid confusion, though.
+
+So, in general, it's better to use initialization lists in your constructors where possible.
+
 Please navigate through the README to learn more about each concept. Let's dive into the exciting world of Object-Oriented Programming with C++!
