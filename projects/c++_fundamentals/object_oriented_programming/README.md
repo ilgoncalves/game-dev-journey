@@ -578,7 +578,87 @@ In this example, the `Player` class is a specific type of object that is both `M
 
 ### **Friend Functions**
 
-...
+Friend functions are a special type of function in C++ that have access to the private and protected members of the class in which they are declared as friends. This is an exception to the general rule that private and protected members of a class can only be accessed directly by methods of that class.
+
+Here's an example of a friend function:
+
+```cpp
+    class Rectangle {
+    private:
+      int width, height;
+
+    public:
+      Rectangle(int w, int h) : width(w), height(h) {}
+
+      friend int area(const Rectangle& rectangle);
+    };
+
+    int area(const Rectangle& rectangle) {
+      // Even though 'width' and 'height' are private, 'area' can access them directly
+      // because it's a friend of the Rectangle class.
+      return rectangle.width * rectangle.height;
+    }
+
+    int main() {
+      Rectangle rectangle(5, 10);
+      std::cout << "Area: " << area(rectangle) << std::endl;
+      return 0;
+    }
+
+```
+
+In this example, `area` is a friend function of the `Rectangle` class and can directly access its private members `width` and `height`.
+
+Friend functions are not considered class methods because they are not declared with the class's scope and are not invoked using an object of the class. Rather, the class gives them access to its private and protected members. Therefore, the friend function can be defined anywhere in the code (but must have a matching declaration within the class definition).
+
+However, friend functions should be used sparingly, as they break the principle of encapsulation by accessing private and protected members of the class directly. Use them when necessary, but avoid overusing them as it can make your code harder to understand and maintain.
+
+Friend classes can also be declared, which would allow all the methods of the friend class to access private and protected members of the class in which it is declared a friend. This can be useful for highly related classes that need to share data in a way that would be cumbersome through getter and setter methods. However, it comes with the same cautions as friend functions regarding encapsulation.
+
+Friend functions are typically used when two or more classes need to work together and need access to each other's private or protected members.
+
+For example, consider a scenario where you have two classes, `Person` and `House`. Let's say that every house has an `address` that is private, and the `Person` has a method called `moveIn(House& h)`. Now, when a person moves into a house, we might want to update the `address` of the person. But we can't do that directly, because address is private.
+
+Here is where a friend function comes in. We could make the `Person::moveIn()` method a friend function of the House class. Then it would have access to the private address member of House.
+
+Here's how it might look:
+
+```cpp
+  class House;  // Forward declaration, since House is used before it's defined
+
+  class Person {
+  private:
+    std::string name;
+    std::string address;
+  public:
+    Person(std::string n) : name(n) {}
+    void moveIn(House& h);
+  };
+
+  class House {
+  private:
+    std::string address;
+  public:
+    House(std::string a) : address(a) {}
+    friend void Person::moveIn(House& h);
+  };
+
+  void Person::moveIn(House& h) {
+    // The moveIn method can access private members of House because it's a friend
+    this->address = h.address;
+  }
+
+  int main() {
+    House myHouse("123 Main St.");
+    Person me("Alice");
+    me.moveIn(myHouse);
+    return 0;
+  }
+```
+
+In this code, `Person::moveIn(House& h)` is a friend function of `House`, so it can access the private `address` member of `House`. Without friend functions, this would not be possible, and we would have to provide a public "getter" function to retrieve the address, which may not always be desirable or appropriate.
+
+Remember, the usage of friend functions can break the principle of encapsulation and it should be used sparingly.
 
 ### **Templates**
 
