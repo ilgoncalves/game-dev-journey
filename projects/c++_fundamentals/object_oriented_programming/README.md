@@ -662,7 +662,60 @@ Remember, the usage of friend functions can break the principle of encapsulation
 
 ### **Templates**
 
-...
+Templates in C++ provide a way to write generic code that can work with different data types. Essentially, templates allow us to define the behavior of a function or class, without specifying the exact types it works with.
+
+#### **Template Functions**
+
+A function template behaves like a function except that the template can have one or more unspecified variables, called template parameters. Here is a simple example of a template function:
+
+```cpp
+  template <typename T>
+  T max(T a, T b) {
+    return (a > b) ? a : b;
+  }
+```
+
+You can call the function `max()` with any data type that supports the `>` operator, like this:
+
+#### **Template Classes**
+
+Similarly, class templates are used to create generic classes. Here is a simple example of a template class:
+
+```cpp
+  template <typename T>
+  class Box {
+  private:
+    T content;
+  public:
+    Box(T content) : content(content) {}
+
+    T get() {
+        return content;
+    }
+  };
+```
+
+You can create instances of the class `Box` with any type:
+
+```cpp
+  Box<int> intBox(123);
+  Box<std::string> strBox("Hello world");
+```
+
+#### **Specialization**
+
+Templates also allow for specialization, which means you can define a different implementation of a function or class for a specific type. For instance, if you wanted to handle strings differently in the `max()` function, you could specialize it like so:
+
+```cpp
+  template <>
+  std::string max(std::string a, std::string b) {
+    return (a.size() > b.size()) ? a : b;
+  }
+```
+
+This version of `max()` will be called when the function is used with `std::string` arguments. It compares the strings by their lengths instead of their lexicographical order.
+
+Templates are a powerful feature of C++ that contribute significantly to its flexibility and efficiency. They can be somewhat complex, especially when involving multiple template parameters, template member functions in template classes, and template specialization. Therefore, it's recommended to understand the basics first and then delve into more complex uses as needed.
 
 ### **Exception Handling**
 
