@@ -18,6 +18,8 @@ In C++, we can define our own types using classes. A class defines a blueprint f
 10. [Templates](#templates)
 11. [Exception Handling](#exception-handling)
 12. [Operator Overloading](#operator-overloading)
+13. [Basic Exercises](#basic-exercises)
+14. [Advanced Exercises](#advanced-exercises)
 
 ### **Introduction to OOP**
 
@@ -973,3 +975,45 @@ Additionally, there's a difference in naming. In the constructor body, `value = 
 So, in general, it's better to use initialization lists in your constructors where possible.
 
 Please navigate through the README to learn more about each concept. Let's dive into the exciting world of Object-Oriented Programming with C++!
+
+### **Basic Exercises**
+
+1. [**`Exercise 1: Create a Class (Encapsulation)`**]()
+   Create a `Person` class that encapsulates data about a person such as `name`, `age`, and `address`. Add methods for changing and displaying this data. Create a few instances of your class and test your code.
+
+2. [**`Exercise 2: Create a Subclass (Inheritance)`**]()
+   Extend the `Person` class to create a `Student` class. Add additional properties that are relevant for a student, like `major` and `GPA`. Overload a method in the Student class, and demonstrate calling both the `Person` and `Student` versions of the method.
+
+3. [**`Exercise 3: Shapes and Polymorphism`**]()
+   Create an abstract `Shape` class and then derive `Rectangle`, `Circle`, `Triangle` classes from it. Have each class implement methods to calculate `Area()` and `Perimeter()`. In your `main()` function, create an array of `Shape` pointers and initialize it with various shapes. Then, loop through the array, calling the `Area()` and `Perimeter()` methods and display the results.
+
+4. [**`Exercise 4: Operator Overloading`**]()
+   Extend the Vector class from the operator overloading example to overload more operators: `+=`, `-=`, `\*=` (scaling), and `==` (checking for equality). Make sure to test all your overloaded operators.
+
+5. [**`Exercise 5: Templates`**]()
+   Create a `Stack` template class that can store elements of any type. Implement methods to `push()` (add) elements, `pop()` (remove) elements, and check if the stack is `empty()`. Test your stack with a few different data types.
+
+6. [**`Exercise 6: Exception Handling`**]()
+   Extend the `Stack` class from the previous exercise to throw an exception when trying to `pop()` an element from an empty stack. Catch this exception in your `main()` function and print an appropriate message.
+
+7. [**`Exercise 7: Multiple Inheritance`**]()
+   Create classes `Employee`, `Student` and `TeachingAssistant`. `TeachingAssistant` should inherit from both `Employee` and `Student`. Make sure each class has some unique properties and/or methods, and then demonstrate creating a `TeachingAssistant` object and working with it.
+
+8. [**`Exercise 8: Friend Functions`**]()
+   Create a class `Bank` which stores `name` and `balance`. Create a friend function `updateBalance()` which can access and modify private data of `Bank`.
+
+### **Advanced Exercises**
+
+1. [**`Exercise 1: Database Management (Encapsulation, Inheritance, Polymorphism)`**]()
+   Design a simple database system with a base class `Record`. `Record` could have attributes such as `id`, `createdAt`, `updatedAt` and methods like `save`, `update`, `delete`. Then derive specific classes like `UserRecord`, `ProductRecord`, `OrderRecord` from `Record`, each with its own additional attributes. For example, `UserRecord` could have `name`, `email`, `password`; `ProductRecord` could have `productName`, `price`, `quantity` etc. Ensure that when you call `save`, `update`, it modifies the `createdAt`, `updatedAt` fields respectively.
+2. [**`Exercise 2: Geometric Operations (Operator Overloading, Templates)`**]()
+   Create a `Point` class for a point in a 2D space (with `x` and `y` as coordinates). Implement operator overloading for `+`, `-`, `==`, and !=. Also, implement a `Point3D` as a subclass of Point with an additional z-coordinate. You should be able to add and subtract 3D points using the overloaded operators.
+
+3. [**`Exercise 3: University System (Multiple Inheritance, Polymorphism, Friend Functions)`**]()
+   Create a class hierarchy for a University. Have a base class `Person` and derive classes like `Student`, `Faculty`, and `Staff` from it. Further subclass `Student` into `Undergraduate` and `Graduate`. Subclass `Faculty` into `Professor` and `Instructor`. Each class should have relevant data and behaviors. Demonstrate polymorphic behavior by storing various types in a `std::vector<Person*>` and calling methods on them.
+
+4. [**`Exercise 4: Custom String Class (Operator Overloading, Exception Handling)`**]()
+   Create your own `String` class that encapsulates a `char` array. Include some of the main `std::string` methods like `length()`, `substr()`, and `find()`. Overload operators like `+`, `+=`, `==`, `!=`, and `<<` (for output to `std::ostream`).
+
+5. [**`Exercise 5: Generic Data Structure (Templates, Exception Handling)`**]()
+   Create a templated `LinkedList` class that can handle data of any type. Implement methods for adding elements, removing elements, searching for elements, and printing the list. If the list is empty and the remove method is called, throw and handle an appropriate exception.
