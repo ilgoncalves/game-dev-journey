@@ -677,6 +677,11 @@ A function template behaves like a function except that the template can have on
 
 You can call the function `max()` with any data type that supports the `>` operator, like this:
 
+```cpp
+  std::cout << max(3, 7) << std::endl;  // prints: 7
+  std::cout << max(3.14, 2.71) << std::endl;  // prints: 3.14
+```
+
 #### **Template Classes**
 
 Similarly, class templates are used to create generic classes. Here is a simple example of a template class:
