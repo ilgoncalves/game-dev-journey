@@ -722,9 +722,90 @@ This version of `max()` will be called when the function is used with `std::stri
 
 Templates are a powerful feature of C++ that contribute significantly to its flexibility and efficiency. They can be somewhat complex, especially when involving multiple template parameters, template member functions in template classes, and template specialization. Therefore, it's recommended to understand the basics first and then delve into more complex uses as needed.
 
+#### Real World Examples
+
+Let's take a real-world example where templates can come in handy. Suppose you are designing a game and you have different types of game objects like `Player`, `Enemy`, `Item` etc. Now you want to have a function that can check for collision between two game objects.
+
+Without templates, you might have to write separate functions for each combination of game object types that could collide. With templates, you can write a generic function that works with all game object types.
+
+First, let's suppose each game object type has a `getBoundingBox()` member function which returns a `Box` object. The `Box` object represents the area occupied by the game object in the game world, and it has `intersects()` member function that checks if it intersects with another `Box`.
+
+Now we can write a generic `collides` function with templates:
+
+```cpp
+  template <typename T1, typename T2>
+  bool collides(const T1& obj1, const T2& obj2) {
+    Box bbox1 = obj1.getBoundingBox();
+    Box bbox2 = obj2.getBoundingBox();
+
+    return bbox1.intersects(bbox2);
+  }
+```
+
+```cpp
+  Player player;
+  Enemy enemy;
+  Item item;
+
+  bool playerEnemyCollision = collides(player, enemy);  // true if the player and the enemy collide
+  bool playerItemCollision = collides(player, item);  // true if the player and the item collide
+```
+
+This example demonstrates how templates can help you write code that is both more flexible and easier to maintain. Instead of having to write and update several specific collision detection functions, you have a single, generic function that can be applied to any game object type.
+
 ### **Exception Handling**
 
-...
+Exception handling in C++ is a process to handle runtime errors. It is a robust mechanism where a block of code is executed which may throw an error during execution, and this error can be caught and handled appropriately to ensure that the program continues to function correctly.
+
+Key Concepts:
+
+- **`Exceptions`**: An exception is a problem that arises during the execution of a program. When a C++ exception is thrown, the normal program flow is stopped and control is transferred to some exception-handling code.
+- **`Throwing an Exception`**: The keyword throw is used to indicate an exception. The operand of the throw statement determines the type for the exception that is being thrown.
+
+  ```cpp
+    throw exceptionObject;
+  ```
+
+- **`Catching an Exception`**: The try/catch block is used to capture and handle exceptions. Code that could potentially throw an exception is put inside a try block. Immediately following the try block are one or more catch blocks that catch and handle the exception.
+
+  ```cpp
+    try {
+      // code that may throw an exception
+    } catch (ExceptionType1 ex) {
+      // handle exception of type ExceptionType1
+    } catch (ExceptionType2 ex) {
+      // handle exception of type ExceptionType2
+    }
+  ```
+
+- **`Standard Exceptions`**: The C++ Standard library provides a base exception class (`std::exception`) along with a handful of common exception types for basic needs. Some of them are `std::runtime_error`, `std::out_of_range`,` std::invalid_argument`, `std::bad_alloc`, etc. You can also define your own exception classes by inheriting from `std::exception` or any other standard exception class.
+
+Here is a simple example of exception handling:
+
+```cpp
+  #include <iostream>
+  #include <stdexcept> // for std::runtime_error
+
+  int divide(int numerator, int denominator) {
+    if (denominator == 0) {
+        throw std::runtime_error("Denominator cannot be zero");
+    }
+    return numerator / denominator;
+  }
+
+  int main() {
+    try {
+        std::cout << divide(10, 2) << "\n";  // prints 5
+        std::cout << divide(10, 0) << "\n";  // throws an exception
+    } catch (std::runtime_error& e) {
+        std::cout << "Caught an exception: " << e.what() << "\n";
+    }
+  }
+```
+
+In this example, the `divide` function throws an exception of type `std::runtime_error` when the denominator is zero. In `main`, we call `divide` inside a `try` block. If an exception is thrown, it is caught and handled in the `catch` block.
+
+One important thing to note is that when an exception is thrown, the program flow is immediately transferred to the nearest `catch` block that can handle the type of exception thrown. This means that if there is any code after the line that throws the exception inside the `try` block, that code will not be executed.
 
 ### **Operator Overloading**
 
