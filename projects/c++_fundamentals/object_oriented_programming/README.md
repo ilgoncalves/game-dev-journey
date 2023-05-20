@@ -809,7 +809,106 @@ One important thing to note is that when an exception is thrown, the program flo
 
 ### **Operator Overloading**
 
-...
+In C++, most built-in operators (like +, -, \*, /, etc.) can be redefined or "overloaded" for user-defined types (i.e., classes and structs). This is a powerful feature that allows programmers to use natural syntax for operations on these types, which can make the code more intuitive and easy to read.
+
+Here's an outline of how to overload an operator:
+
+```cpp
+  ReturnType operator_symbol(Parameters) { /*...*/ }
+```
+
+Where:
+
+- `ReturnType` is the type of value that the operator returns.
+- `operator_symbol` is the keyword `operator` followed by the operator symbol to be overloaded.
+- `Parameters` are the parameters required for the operator.
+  For example, let's create a Complex class to represent a complex number and overload the + operator for it:
+
+For example, let's create a `Complex` class to represent a complex number and overload the + operator for it:
+
+```cpp
+  class Complex {
+  public:
+    double real, imag;
+
+    Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
+
+    // Overloading the + operator
+    Complex operator + (const Complex& rhs) {
+        return Complex(this->real + rhs.real, this->imag + rhs.imag);
+    }
+  };
+
+  int main() {
+    Complex c1(1.0, 2.0), c2(2.0, 3.0);
+    Complex c3 = c1 + c2;  // uses the overloaded + operator
+    std::cout << "c3 = (" << c3.real << ", " << c3.imag << ")\n";
+  }
+```
+
+This program defines a `Complex` class for complex numbers and then overloads the + operator for it. In the `main` function, we can now use the + operator to add two `Complex` objects naturally.
+
+Note that operators should be overloaded responsibly to avoid confusion. The overloaded operator should perform an operation consistent with what would be expected given the semantics of the original operator. For example, overloading `+` to perform subtraction would likely confuse users of your class.
+
+It's also important to note that not all operators can be overloaded in C++. The following operators cannot be overloaded:
+
+- Scope operator `::`
+- Sizeof
+- Member selector `.`
+- Member pointer selector `.*`
+- Ternary operator `?:`
+- typeid
+
+The assignment operator `=` has a special property: if not overloaded, the compiler creates a default one.
+
+#### Real World Example
+
+A real-world use case for operator overloading could be a `Vector` class.
+
+In mathematics and physics, a vector has both a magnitude (size) and direction, and vectors can be added together, subtracted, scaled (multiplied by a scalar), and so forth. These operations are naturally expressed with operators like `+`, `-`, and `*`.
+
+Let's take a look at an example:
+
+```cpp
+  class Vector {
+  public:
+    double x, y;
+
+    Vector(double x = 0.0, double y = 0.0) : x(x), y(y) {}
+
+    // Overload + for vector addition
+    Vector operator+(const Vector& rhs) {
+        return Vector(this->x + rhs.x, this->y + rhs.y);
+    }
+
+    // Overload - for vector subtraction
+    Vector operator-(const Vector& rhs) {
+        return Vector(this->x - rhs.x, this->y - rhs.y);
+    }
+
+    // Overload * for scalar multiplication
+    Vector operator*(double rhs) {
+        return Vector(this->x * rhs, this->y * rhs);
+    }
+  };
+
+  int main() {
+    Vector v1(1.0, 2.0), v2(2.0, 3.0);
+
+    Vector v3 = v1 + v2;  // vector addition
+    std::cout << "v3 = (" << v3.x << ", " << v3.y << ")\n";
+
+    Vector v4 = v1 - v2;  // vector subtraction
+    std::cout << "v4 = (" << v4.x << ", " << v4.y << ")\n";
+
+    Vector v5 = v1 * 3;   // scalar multiplication
+    std::cout << "v5 = (" << v5.x << ", " << v5.y << ")\n";
+  }
+```
+
+In this case, operator overloading makes the code much more readable and intuitive. It's easy to see that `v3` is the result of adding `v1` and `v2`, `v4` is the result of subtracting `v2` from `v1`, and `v5` is the result of multiplying `v1` by 3.
+
+It's worth mentioning that in more complex mathematical libraries, vectors and other mathematical structures are often implemented with more thorough error checking and handling (for things like dimensionality mismatches), more operations (like dot product and cross product for vectors), and optimizations for performance.
 
 ### Notes
 
