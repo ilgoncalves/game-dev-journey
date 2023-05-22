@@ -18,8 +18,9 @@ In C++, we can define our own types using classes. A class defines a blueprint f
 10. [Templates](#templates)
 11. [Exception Handling](#exception-handling)
 12. [Operator Overloading](#operator-overloading)
-13. [Basic Exercises](#basic-exercises)
-14. [Advanced Exercises](#advanced-exercises)
+13. [Code Split](#code-split)
+14. [Basic Exercises](#basic-exercises)
+15. [Advanced Exercises](#advanced-exercises)
 
 ### **Introduction to OOP**
 
@@ -975,6 +976,72 @@ Additionally, there's a difference in naming. In the constructor body, `value = 
 So, in general, it's better to use initialization lists in your constructors where possible.
 
 Please navigate through the README to learn more about each concept. Let's dive into the exciting world of Object-Oriented Programming with C++!
+
+### **Code Split**
+
+You can split the definition and implementation of a class across multiple files in C++. This is commonly done in large software projects to improve code organization, readability, and modularity. Here's how you do it:
+
+1. **`Header file (.h)`**: Contains the class definition. This typically includes the data members and function prototypes for the class.
+
+   ```cpp
+     // MyClass.h
+
+     #ifndef MYCLASS_H
+     #define MYCLASS_H
+
+     class MyClass {
+     public:
+       MyClass();               // Constructor
+       ~MyClass();              // Destructor
+
+       void SomeMethod();       // Method declaration
+     private:
+       int myVariable;          // Member variable
+     };
+
+     #endif
+   ```
+
+2. **`Source file (.cpp)`**: Contains the implementation of the class functions.
+
+   ```cpp
+     // MyClass.cpp
+
+     #include "MyClass.h"       // Include the class definition
+
+     MyClass::MyClass() {
+       // Constructor implementation
+     }
+
+     MyClass::~MyClass() {
+       // Destructor implementation
+     }
+
+     void MyClass::SomeMethod() {
+       // Method implementation
+     }
+   ```
+
+3. **`In another file`**: Include the header file where you want to use the class. The compiler will handle linking the implementation from the .cpp file.
+
+   ```cpp
+     // Main.cpp
+
+     #include "MyClass.h"
+
+     int main() {
+       MyClass instance;      // Create an instance of MyClass
+       instance.SomeMethod(); // Call a method of MyClass
+
+       return 0;
+     }
+   ```
+
+This setup uses what's called a "header guard" (`#ifndef`, `#define`, and `#endif`) to prevent multiple inclusions of the same header file, which can cause problems.
+
+Also remember that the .cpp file with the `main` function must be linked with the .cpp file that implements the class, which is usually done by the build system you're using (like make or cmake).
+
+In a nutshell, this is how classes are typically separated into different files in C++. This can make your code easier to manage, especially as your project grows larger.
 
 ### **Basic Exercises**
 
