@@ -978,7 +978,7 @@ Please navigate through the README to learn more about each concept. Let's dive 
 
 ### **Basic Exercises**
 
-1. [**`Exercise 1: Create a Class (Encapsulation)`**]()
+1. [**`Exercise 1: Create a Class (Encapsulation)`**](./encapsulation.cpp)
    Create a `Person` class that encapsulates data about a person such as `name`, `age`, and `address`. Add methods for changing and displaying this data. Create a few instances of your class and test your code.
 
 2. [**`Exercise 2: Create a Subclass (Inheritance)`**]()
