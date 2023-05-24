@@ -1048,7 +1048,7 @@ In a nutshell, this is how classes are typically separated into different files 
 1. [**`Exercise 1: Create a Class (Encapsulation)`**](./encapsulation.cpp)
    Create a `Person` class that encapsulates data about a person such as `name`, `age`, and `address`. Add methods for changing and displaying this data. Create a few instances of your class and test your code.
 
-2. [**`Exercise 2: Create a Subclass (Inheritance)`**]()
+2. [**`Exercise 2: Create a Subclass (Inheritance)`**](./inheritance.cpp)
    Extend the `Person` class to create a `Student` class. Add additional properties that are relevant for a student, like `major` and `GPA`. Overload a method in the Student class, and demonstrate calling both the `Person` and `Student` versions of the method.
 
 3. [**`Exercise 3: Shapes and Polymorphism`**]()
