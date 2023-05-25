@@ -1051,7 +1051,7 @@ In a nutshell, this is how classes are typically separated into different files 
 2. [**`Exercise 2: Create a Subclass (Inheritance)`**](./exercise_2/inheritance.cpp)
    Extend the `Person` class to create a `Student` class. Add additional properties that are relevant for a student, like `major` and `GPA`. Overload a method in the Student class, and demonstrate calling both the `Person` and `Student` versions of the method.
 
-3. [**`Exercise 3: Shapes and Polymorphism`**]()
+3. [**`Exercise 3: Shapes and Polymorphism`**](./exercise_3/main.cpp)
    Create an abstract `Shape` class and then derive `Rectangle`, `Circle`, `Triangle` classes from it. Have each class implement methods to calculate `Area()` and `Perimeter()`. In your `main()` function, create an array of `Shape` pointers and initialize it with various shapes. Then, loop through the array, calling the `Area()` and `Perimeter()` methods and display the results.
 
 4. [**`Exercise 4: Operator Overloading`**]()
