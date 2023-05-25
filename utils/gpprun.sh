@@ -23,7 +23,7 @@ cd "$( dirname "$1" )"
 # Compile and run the C++ program
 # We use the name of the first source file to derive the program name
 program_name="${1%.*}"
-g++ -o "$program_name".out "$@"
+g++ -std=c++11 -o "$program_name".out "$@"
 if [ $? -ne 0 ]; then
     echo "Compilation failed."
     exit 1
