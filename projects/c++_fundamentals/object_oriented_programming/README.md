@@ -1054,7 +1054,7 @@ In a nutshell, this is how classes are typically separated into different files 
 3. [**`Exercise 3: Shapes and Polymorphism`**](./exercise_3/main.cpp)
    Create an abstract `Shape` class and then derive `Rectangle`, `Circle`, `Triangle` classes from it. Have each class implement methods to calculate `Area()` and `Perimeter()`. In your `main()` function, create an array of `Shape` pointers and initialize it with various shapes. Then, loop through the array, calling the `Area()` and `Perimeter()` methods and display the results.
 
-4. [**`Exercise 4: Operator Overloading`**]()
+4. [**`Exercise 4: Operator Overloading`**](./exercise_4/main.cpp)
    Extend the Vector class from the operator overloading example to overload more operators: `+=`, `-=`, `\*=` (scaling), and `==` (checking for equality). Make sure to test all your overloaded operators.
 
 5. [**`Exercise 5: Templates`**]()
