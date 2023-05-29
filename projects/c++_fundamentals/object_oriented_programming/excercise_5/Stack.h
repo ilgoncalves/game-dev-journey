@@ -6,11 +6,13 @@
 template <typename T>
 class Stack {
  private:
-  std::vector<T> stackElement;
+  std::vector<T> stackElements;
 
  public:
   void push(T element);
-  void pop(T element);
-  void empty();
+  T pop();
+  bool empty();
 };
+
+#include "Stack.tpp"
 #endif  // STACK_H
