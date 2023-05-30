@@ -11,8 +11,7 @@ void Stack<T>::push(T element) {
 template <typename T>
 T Stack<T>::pop() {
   if (stackElements.empty()) {
-    cout << "Stack is empty" << endl;
-    break;
+    throw std::out_of_range("Stack is empty");
   }
   T tmp = stackElements.back();
   stackElements.pop_back();
