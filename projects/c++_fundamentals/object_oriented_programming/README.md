@@ -1057,7 +1057,7 @@ In a nutshell, this is how classes are typically separated into different files 
 4. [**`Exercise 4: Operator Overloading`**](./exercise_4/main.cpp)
    Extend the Vector class from the operator overloading example to overload more operators: `+=`, `-=`, `\*=` (scaling), and `==` (checking for equality). Make sure to test all your overloaded operators.
 
-5. [**`Exercise 5: Templates`**]()
+5. [**`Exercise 5: Templates`**](./excercise_5/main.cpp)
    Create a `Stack` template class that can store elements of any type. Implement methods to `push()` (add) elements, `pop()` (remove) elements, and check if the stack is `empty()`. Test your stack with a few different data types.
 
 6. [**`Exercise 6: Exception Handling`**]()
