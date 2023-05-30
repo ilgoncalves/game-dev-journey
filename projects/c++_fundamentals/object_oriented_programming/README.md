@@ -1060,7 +1060,7 @@ In a nutshell, this is how classes are typically separated into different files 
 5. [**`Exercise 5: Templates`**](./excercise_5/main.cpp)
    Create a `Stack` template class that can store elements of any type. Implement methods to `push()` (add) elements, `pop()` (remove) elements, and check if the stack is `empty()`. Test your stack with a few different data types.
 
-6. [**`Exercise 6: Exception Handling`**]()
+6. [**`Exercise 6: Exception Handling`**](./exercise_6/main.cpp)
    Extend the `Stack` class from the previous exercise to throw an exception when trying to `pop()` an element from an empty stack. Catch this exception in your `main()` function and print an appropriate message.
 
 7. [**`Exercise 7: Multiple Inheritance`**]()
