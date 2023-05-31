@@ -1063,7 +1063,7 @@ In a nutshell, this is how classes are typically separated into different files 
 6. [**`Exercise 6: Exception Handling`**](./exercise_6/main.cpp)
    Extend the `Stack` class from the previous exercise to throw an exception when trying to `pop()` an element from an empty stack. Catch this exception in your `main()` function and print an appropriate message.
 
-7. [**`Exercise 7: Multiple Inheritance`**]()
+7. [**`Exercise 7: Multiple Inheritance`**](./exercise_7/main.cpp)
    Create classes `Employee`, `Student` and `TeachingAssistant`. `TeachingAssistant` should inherit from both `Employee` and `Student`. Make sure each class has some unique properties and/or methods, and then demonstrate creating a `TeachingAssistant` object and working with it.
 
 8. [**`Exercise 8: Friend Functions`**]()
