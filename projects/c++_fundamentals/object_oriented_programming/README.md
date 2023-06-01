@@ -1066,7 +1066,7 @@ In a nutshell, this is how classes are typically separated into different files 
 7. [**`Exercise 7: Multiple Inheritance`**](./exercise_7/main.cpp)
    Create classes `Employee`, `Student` and `TeachingAssistant`. `TeachingAssistant` should inherit from both `Employee` and `Student`. Make sure each class has some unique properties and/or methods, and then demonstrate creating a `TeachingAssistant` object and working with it.
 
-8. [**`Exercise 8: Friend Functions`**]()
+8. [**`Exercise 8: Friend Functions`**](./exercise_8/main.cpp)
    Create a class `Bank` which stores `name` and `balance`. Create a friend function `updateBalance()` which can access and modify private data of `Bank`.
 
 ### **Advanced Exercises**
