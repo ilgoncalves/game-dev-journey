@@ -93,11 +93,9 @@ Here is a list of projects that I've completed during my learning journey. Each 
    - [Project 1](./projects/c++_fundamentals/project1)
    - [Project 2](./projects/c++_fundamentals/project2)
 
-(Continue adding projects for other topics)
-
 # Utils
 
-This folder contains utility scripts to help you streamline your workflow during your game development journey.
+This folder contains utility scripts to help the journey.
 
 ## gpprun.sh
 
