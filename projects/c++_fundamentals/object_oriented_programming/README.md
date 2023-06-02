@@ -1084,3 +1084,26 @@ In a nutshell, this is how classes are typically separated into different files 
 
 13. [**`Exercise 13: Generic Data Structure (Templates, Exception Handling)`**]()
     Create a templated `LinkedList` class that can handle data of any type. Implement methods for adding elements, removing elements, searching for elements, and printing the list. If the list is empty and the remove method is called, throw and handle an appropriate exception.
+
+### **Game Dev OOP Exercises**
+
+Exercise 1: Design Basic Game Characters
+Create an abstract base class Character with attributes such as name, health, and strength. The Character class should have pure virtual functions like attack(), defend(), and move(). Implement derived classes like Warrior, Mage, and Archer each with unique ways of attacking, defending, and moving. Create a main function where you can instantiate objects of these classes and call their member functions.
+
+Exercise 2: Inventory System
+Design an inventory system for a role-playing game. Create an Item base class and derive different kinds of items from it like Potion, Weapon, Armor, etc. Each class should have methods like use(). Now, create a class Inventory which can hold a collection of Item objects. This Inventory class should have methods to add(Item), remove(Item) and use(Item). In the main function, create a few items and an inventory to hold them.
+
+Exercise 3: Game Level and Polymorphism
+Design a very basic game level system. Create an abstract base class Level with a pure virtual function play(). Derive different level classes from it like Level1, Level2, etc., each with a different implementation of play(). Now, create a Game class that uses polymorphism to hold a pointer to a Level object. It should have a function setLevel(Level\*) that can be used to change which level is currently being played.
+
+Exercise 4: Exception Handling in Game
+Build upon the inventory system from Exercise 2. When use(Item) is called on the Inventory, and if the item does not exist in the inventory, throw an exception. In the main function, demonstrate how this exception can be caught and handled.
+
+Exercise 5: Game Entities and Multiple Inheritance (Multiple Inheritance, Polymorphism)
+Extend the game from Exercise 1. Create an Entity base class that represents an object in the game world, with attributes like position and methods like draw(). Now, suppose there are some entities in your game which can be both Character and Item. To represent these, create a class like TreasureGuardian that inherits from both Character and Item. Demonstrate how such an object can be used as both a Character and an Item in your game.
+
+Exercise 6: Grid-Based Game and Overloaded Operators (Operator Overloading)
+Consider a grid-based game where the game world is a 2D grid of cells. Create a Grid class that represents this grid. Each cell in the grid can be accessed using its row and column indices. Implement operator overloads for (), so you can access cells in the grid like this: grid(row, column). Each cell can contain an Entity object (using the Entity class from Exercise 4).
+
+Exercise 7: Game Events and Template Classes (Templates)
+Consider a game where events happen at certain times. An event has a time at which it happens and an action that is triggered when the event happens. The action can be represented as a string (like "spawn_enemy", "start_boss_fight"). Create a GameEvent template class where the time can be of any numeric type (like int for frames, or float for seconds) and the action is always a string. The GameEvent class should have methods like getTime() and getAction(). Create a GameTimeline class that holds a list of GameEvent objects. It should have methods like addEvent(GameEvent), removeEvent(GameEvent), and getEventsAtTime(T), where T is the same type as the time in GameEvent.
