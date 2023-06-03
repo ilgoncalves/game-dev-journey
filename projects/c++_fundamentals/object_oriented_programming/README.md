@@ -1093,7 +1093,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
 15. [**`Exercise 2: Inventory System`**]()
 
-    Design an inventory system for a role-playing game. Create an `Item` base class and derive different kinds of items from it like `Potion`, We`apon, `Armor`, etc. Each class should have methods like `use()`. Now, create a class Inventory which can hold a collection of `Item`objects. This`Inventory`class should have methods to`add(Item)`, `remove(Item)`and`use(Item)`. In the main function, create a few items and an inventory to hold them.
+    Design an inventory system for a role-playing game. Create an `Item` base class and derive different kinds of items from it like `Potion`, `Weapon`, `Armor`, etc. Each class should have methods like `use()`. Now, create a class Inventory which can hold a collection of `Item` objects. This `Inventory` class should have methods to `add(Item)`, `remove(Item)` and `use(Item)`. In the main function, create a few items and an inventory to hold them.
 
 16. [**`Exercise 3: Game Level and Polymorphism`**]()
 
