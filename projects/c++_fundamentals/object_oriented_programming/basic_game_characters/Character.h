@@ -12,10 +12,12 @@ class Character {
  public:
   Character(string name);
 
-  virtual void attack() = 0;
+  virtual void attack(Character& enemy) = 0;
   virtual void defend() = 0;
   virtual void move() = 0;
   void receiveAttack(Character& charater);
+
+  void displayLife();
 };
 
 #endif  // CHARACTER_H

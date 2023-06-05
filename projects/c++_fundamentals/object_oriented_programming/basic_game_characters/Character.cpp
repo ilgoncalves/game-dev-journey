@@ -31,11 +31,25 @@ Character::Character(string name) : name(name) {
 }
 
 void Character::receiveAttack(Character& charater) {
-  bool shouldDefend = generateRandomStrength(0, 1);
+  int damage = charater.strength - this->strength;
 
-  if (shouldDefend) {
-    charater.defend();
+  if (damage >= 0) {
+    if (health > 0) {
+      health = health - (damage > health ? health : damage);
+      cout << "Successful attack" << endl;
+      cout << "Damage: " << damage << endl;
+      if (health <= 0) {
+        cout << this->name << " died" << endl;
+      }
+    } else {
+      cout << this->name << " is dead" << endl;
+    }
+
   } else {
-    health = health - (charater.strength % 100);
+    this->defend();
   }
+}
+
+void Character::displayLife() {
+  cout << this->name << " life: " << health << "%" << endl;
 }
