@@ -29,3 +29,13 @@ Character::Character(string name) : name(name) {
 
   cout << "Strength: " << strength << endl;
 }
+
+void Character::receiveAttack(Character& charater) {
+  bool shouldDefend = generateRandomStrength(0, 1);
+
+  if (shouldDefend) {
+    charater.defend();
+  } else {
+    health = health - (charater.strength % 100);
+  }
+}

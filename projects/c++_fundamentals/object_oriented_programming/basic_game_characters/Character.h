@@ -15,6 +15,7 @@ class Character {
   virtual void attack() = 0;
   virtual void defend() = 0;
   virtual void move() = 0;
+  void receiveAttack(Character& charater);
 };
 
 #endif  // CHARACTER_H
