@@ -1,4 +1,5 @@
 #include <iostream>
+#include <random>
 
 #include "Character.h"
 
@@ -27,23 +28,46 @@ class Warrior : public Character {
   void defend() {
     cout << "Warrior " << name << " defended the attack" << endl;
   };
-  void move(){};
+  void move() { cout << "Moving like a Warrior" << endl; };
 };
 
-class Mage : public Character {};
+class Mage : public Character {
+ private:
+  double hitKilldamageChance;
+
+ public:
+  Mage(string name) : Character(name) {
+    hitKilldamageChance = this->strength / 10;
+  };
+  void attack(Character& enemy) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(0, 1);
+
+    double minimalCritical = dis(gen);
+
+    if ((1 - minimalCritical) < (hitKilldamageChance / 100)) {
+      cout << "Mage " << name << " cursed a critical spell and kill "
+           << enemy.getName() << endl;
+      enemy.setHealth(0);
+    }
+  };
+  void defend() { cout << "Mage " << name << " defended the attack" << endl; };
+  void move() { cout << "Moving like a Mage" << endl; };
+};
 
 class Archer : public Character {};
 
 int main() {
-  Warrior warrior1("Igor");
+  Mage mage("Igor");
 
-  Warrior warrior2("thomas");
+  Warrior warrior2("Thomas");
 
-  warrior1.attack(warrior2);
+  mage.attack(warrior2);
 
   warrior2.displayLife();
 
-  warrior1.attack(warrior2);
+  mage.attack(warrior2);
 
   warrior2.displayLife();
   return 0;
