@@ -15,7 +15,16 @@ class Character {
   virtual void attack(Character& enemy) = 0;
   virtual void defend() = 0;
   virtual void move() = 0;
-  void receiveAttack(Character& charater);
+
+  int getStrength();
+
+  int getHealth();
+
+  string getName();
+
+  void setStrength(int newStrength);
+
+  void setHealth(int newHealth);
 
   void displayLife();
 };

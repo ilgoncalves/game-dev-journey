@@ -30,26 +30,16 @@ Character::Character(string name) : name(name) {
   cout << "Strength: " << strength << endl;
 }
 
-void Character::receiveAttack(Character& charater) {
-  int damage = charater.strength - this->strength;
-
-  if (damage >= 0) {
-    if (health > 0) {
-      health = health - (damage > health ? health : damage);
-      cout << "Successful attack" << endl;
-      cout << "Damage: " << damage << endl;
-      if (health <= 0) {
-        cout << this->name << " died" << endl;
-      }
-    } else {
-      cout << this->name << " is dead" << endl;
-    }
-
-  } else {
-    this->defend();
-  }
-}
-
 void Character::displayLife() {
   cout << this->name << " life: " << health << "%" << endl;
 }
+
+int Character::getStrength() { return this->strength; }
+
+int Character::getHealth() { return this->health; }
+
+string Character::getName() { return this->name; }
+
+void Character::setStrength(int newStrength) { this->strength = newStrength; }
+
+void Character::setHealth(int newHealth) { this->health = newHealth; }
