@@ -56,10 +56,41 @@ class Mage : public Character {
   void move() { cout << "Moving like a Mage" << endl; };
 };
 
-class Archer : public Character {};
+class Archer : public Character {
+ private:
+  int arrowQuiver;
+  double arrowDamage;
+
+ public:
+  Archer(string name) : Character(name) {
+    arrowQuiver = 10;
+    arrowDamage = this->strength / 100;
+  };
+
+  void attack(Character& enemy) {
+    for (int i = 0; i <= arrowQuiver; i++) {
+      std::random_device rd;
+      std::mt19937 gen(rd());
+      std::uniform_int_distribution<> dis(0, 1);
+
+      bool arrowReachedEnemy = dis(gen);
+
+      if (arrowReachedEnemy) {
+        cout << "An arrow hit " << enemy.getName() << endl;
+        cout << "Damage: " << arrowDamage << endl;
+        enemy.setHealth(enemy.getHealth() - arrowDamage);
+      }
+    }
+  };
+
+  void defend() {
+    cout << "Archer " << name << " defended the attack" << endl;
+  };
+  void move() { cout << "Moving like a Archer" << endl; };
+};
 
 int main() {
-  Mage mage("Igor");
+  Mage mage("Alex");
 
   Warrior warrior2("Thomas");
 
@@ -70,5 +101,11 @@ int main() {
   mage.attack(warrior2);
 
   warrior2.displayLife();
+  Archer archer1("Edison");
+
+  archer1.attack(mage);
+
+  mage.displayLife();
+
   return 0;
 }
