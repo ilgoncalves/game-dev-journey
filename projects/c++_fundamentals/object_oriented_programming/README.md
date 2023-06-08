@@ -1107,7 +1107,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
     Extend the game from Exercise 1. Create an `Entity` base class that represents an object in the game world, with attributes like `position` and methods like `draw()`. Now, suppose there are some entities in your game which can be both `Character` and `Item`. To represent these, create a class like `TreasureGuardian` that inherits from both `Character` and `Item`. Demonstrate how such an object can be used as both a `Character` and an `Item` in your game.
 
-19. [**`Exercise 6: Grid-Based Game and Overloaded Operators (Operator Overloading)`**]()
+19. [**`Exercise 6: Grid-Based Game and Overloaded Operators (Operator Overloading)`**](./grid_based_game/main.cpp)
 
     Consider a grid-based game where the game world is a 2D grid of cells. Create a `Grid` class that represents this grid. Each cell in the grid can be accessed using its row and column indices. Implement operator overloads for `()`, so you can access cells in the grid like this: `grid(row, column)`. Each cell can contain an `Entity` object (using the `Entity` class from Exercise 4).
 
