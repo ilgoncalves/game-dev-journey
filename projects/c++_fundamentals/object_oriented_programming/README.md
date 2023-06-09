@@ -1103,7 +1103,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
     Build upon the inventory system from Exercise 2. When `use(Item)` is called on the `Inventory`, and if the item does not exist in the inventory, throw an exception. In the main function, demonstrate how this exception can be caught and handled.
 
-18. [**`Exercise 5: Game Entities and Multiple Inheritance (Multiple Inheritance, Polymorphism)`**]()
+18. [**`Exercise 5: Game Entities and Multiple Inheritance (Multiple Inheritance, Polymorphism)`**](./game_entities/main.cpp)
 
     Extend the game from Exercise 1. Create an `Entity` base class that represents an object in the game world, with attributes like `position` and methods like `draw()`. Now, suppose there are some entities in your game which can be both `Character` and `Item`. To represent these, create a class like `TreasureGuardian` that inherits from both `Character` and `Item`. Demonstrate how such an object can be used as both a `Character` and an `Item` in your game.
 
