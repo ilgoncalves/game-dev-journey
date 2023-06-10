@@ -49,8 +49,11 @@ class Item {
   Item() { id = generate_uuid_v4(); }
   virtual void use() = 0;
 
+  string getId() { return id; }
   int getUsage() { return usage; }
   void setUsage(int newUsage) { usage = newUsage; }
+
+  bool operator==(const Item* item) { return item->id == this->id; }
 };
 
 class Potion : public Item {
@@ -58,6 +61,7 @@ class Potion : public Item {
   void use() {
     if (this->getUsage() > 0) {
       this->setUsage(0);
+      cout << "potion has been used" << endl;
     } else {
       cout << "this potion is already used" << endl;
     }
@@ -77,6 +81,7 @@ class Weapon : public Item {
     } else {
       this->setUsage(0);
     }
+    cout << "Armor used! life remain:" << this->getUsage() << endl;
   }
 };
 
@@ -90,28 +95,50 @@ class Armor : public Item {
     int amountUsed = this->getUsage() - 20;
     if (amountUsed > 0) {
       this->setUsage(amountUsed);
+
     } else {
       this->setUsage(0);
     }
+    cout << "Armor used! life remain:" << this->getUsage() << endl;
   }
 };
 
 class Inventory {
  private:
-  vector<Item> itens;
+  vector<Item*> itens;
 
  public:
-  void add(Item item){};
+  void add(Item* item) { itens.push_back(item); };
 
-  void remove(Item item){};
+  void remove(Item* item) {
+    for (auto it = itens.begin(); it != itens.end();) {
+      if (*it == item) {
+        itens.erase(it);
+      } else {
+        it++;
+      }
+    }
+  }
 
-  void use(Item item){};
+  void size() { cout << "Size is: " << itens.size() << endl; }
+
+  void use(Item* item) { item->use(); };
 };
 
 int main() {
   Potion potion;
+  Potion potion2;
   Weapon weapon;
   Armor armor;
+  Inventory inventory;
+
+  inventory.add(&potion);
+  inventory.size();
+  inventory.add(&weapon);
+  inventory.size();
+  inventory.use(&potion2);
+  inventory.remove(&potion);
+  inventory.size();
 
   return 0;
 }
