@@ -1091,7 +1091,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
     Create an abstract base class `Character` with attributes such as `name`, `health`, and `strength`. The Character class should have pure virtual functions like `attack()`, `defend()`, and `move()`. Implement derived classes like `Warrior`, `Mage`, and `Archer` each with unique ways of attacking, defending, and moving. Create a main function where you can instantiate objects of these classes and call their member functions.
 
-15. [**`Exercise 2: Inventory System`**]()
+15. [**`Exercise 2: Inventory System`**](./invetory_system/main.cpp)
 
     Design an inventory system for a role-playing game. Create an `Item` base class and derive different kinds of items from it like `Potion`, `Weapon`, `Armor`, etc. Each class should have methods like `use()`. Now, create a class Inventory which can hold a collection of `Item` objects. This `Inventory` class should have methods to `add(Item)`, `remove(Item)` and `use(Item)`. In the main function, create a few items and an inventory to hold them.
 
