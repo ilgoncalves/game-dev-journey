@@ -1099,7 +1099,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
     Design a very basic game level system. Create an abstract base class `Level` with a pure virtual function `play()`. Derive different level classes from it like `Level1`, `Level2`, etc., each with a different implementation of `play()`. Now, create a `Game` class that uses polymorphism to hold a pointer to a `Level` object. It should have a function `setLevel(Level*)` that can be used to change which level is currently being played.
 
-17. [**`Exercise 4: Exception Handling in Game`**]()
+17. [**`Exercise 4: Exception Handling in Game`**](./invetory_system/main.cpp)
 
     Build upon the inventory system from Exercise 2. When `use(Item)` is called on the `Inventory`, and if the item does not exist in the inventory, throw an exception. In the main function, demonstrate how this exception can be caught and handled.
 
