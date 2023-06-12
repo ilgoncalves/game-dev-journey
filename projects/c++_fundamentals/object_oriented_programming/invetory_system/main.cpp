@@ -1,6 +1,9 @@
+
+#include <algorithm>
 #include <iostream>
 #include <random>
 #include <sstream>
+#include <stdexcept>
 #include <vector>
 
 using std::cout;
@@ -57,7 +60,7 @@ class Item {
 };
 
 class Potion : public Item {
- public:
+ protected:
   void use() {
     if (this->getUsage() > 0) {
       this->setUsage(0);
@@ -69,7 +72,7 @@ class Potion : public Item {
 };
 
 class Weapon : public Item {
- public:
+ protected:
   void use() {
     if (this->getUsage() <= 0) {
       cout << "this Weapon is broken" << endl;
@@ -81,12 +84,12 @@ class Weapon : public Item {
     } else {
       this->setUsage(0);
     }
-    cout << "Armor used! life remain:" << this->getUsage() << endl;
+    cout << "Weapon used! life remain:" << this->getUsage() << endl;
   }
 };
 
 class Armor : public Item {
- public:
+ protected:
   void use() {
     if (this->getUsage() <= 0) {
       cout << "this Armor is broken" << endl;
@@ -122,7 +125,15 @@ class Inventory {
 
   void size() { cout << "Size is: " << itens.size() << endl; }
 
-  void use(Item* item) { item->use(); };
+  void use(Item* item) {
+    bool isItemInArray =
+        std::find(std::begin(itens), std::end(itens), item) != std::end(itens);
+    if (!isItemInArray) {
+      throw std::out_of_range("Item not found ");
+    } else {
+      item->use();
+    }
+  };
 };
 
 int main() {
@@ -133,12 +144,13 @@ int main() {
   Inventory inventory;
 
   inventory.add(&potion);
+  inventory.add(&potion2);
   inventory.size();
-  inventory.add(&weapon);
   inventory.size();
   inventory.use(&potion2);
   inventory.remove(&potion);
   inventory.size();
+  inventory.use(&weapon);
 
   return 0;
 }
