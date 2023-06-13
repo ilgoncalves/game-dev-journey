@@ -1096,7 +1096,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
     Design an inventory system for a role-playing game. Create an `Item` base class and derive different kinds of items from it like `Potion`, `Weapon`, `Armor`, etc. Each class should have methods like `use()`. Now, create a class Inventory which can hold a collection of `Item` objects. This `Inventory` class should have methods to `add(Item)`, `remove(Item)` and `use(Item)`. In the main function, create a few items and an inventory to hold them.
 
-16. [**`Exercise 3: Game Level and Polymorphism`**]()
+16. [**`Exercise 3: Game Level and Polymorphism`**](./game_level/main.cpp)
 
     Design a very basic game level system. Create an abstract base class `Level` with a pure virtual function `play()`. Derive different level classes from it like `Level1`, `Level2`, etc., each with a different implementation of `play()`. Now, create a `Game` class that uses polymorphism to hold a pointer to a `Level` object. It should have a function `setLevel(Level*)` that can be used to change which level is currently being played.
 
