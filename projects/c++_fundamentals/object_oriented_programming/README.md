@@ -21,6 +21,7 @@ In C++, we can define our own types using classes. A class defines a blueprint f
 13. [Code Split](#code-split)
 14. [Basic Exercises](#basic-exercises)
 15. [Advanced Exercises](#advanced-exercises)
+16. [Game Dev OOP Exercises](#game-dev-oop-exercises)
 
 ### **Introduction to OOP**
 
