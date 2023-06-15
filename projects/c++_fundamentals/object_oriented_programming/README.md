@@ -1072,7 +1072,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
 ### **Advanced Exercises**
 
-9. [**`Exercise 9: Database Management (Encapsulation, Inheritance, Polymorphism)`**]()
+9. [**`Exercise 9: Database Management (Encapsulation, Inheritance, Polymorphism)`**](./database_management/main.cpp)
    Design a simple database system with a base class `Record`. `Record` could have attributes such as `id`, `createdAt`, `updatedAt` and methods like `save`, `update`, `delete`. Then derive specific classes like `UserRecord`, `ProductRecord`, `OrderRecord` from `Record`, each with its own additional attributes. For example, `UserRecord` could have `name`, `email`, `password`; `ProductRecord` could have `productName`, `price`, `quantity` etc. Ensure that when you call `save`, `update`, it modifies the `createdAt`, `updatedAt` fields respectively.
 10. [**`Exercise 10: Geometric Operations (Operator Overloading, Templates)`**]()
     Create a `Point` class for a point in a 2D space (with `x` and `y` as coordinates). Implement operator overloading for `+`, `-`, `==`, and !=. Also, implement a `Point3D` as a subclass of Point with an additional z-coordinate. You should be able to add and subtract 3D points using the overloaded operators.
