@@ -28,7 +28,8 @@ class Point3D : public Point {
   Point3D(int x = 0, int y = 0, int z = 0) : Point(x, y), z(z) {}
 
   Point3D operator+(const Point3D& point) const {
-    return Point3D(x + point.x, y + point.y, z + point.z);
+    Point p = Point(this->x, this->y) + Point(point.x, point.y);
+    return Point3D(p.x, p.y, z + point.z);
   }
 
   Point3D operator-(const Point3D& point) const {
