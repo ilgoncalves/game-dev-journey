@@ -1143,4 +1143,64 @@ Key Features:
 4. **Battles** - Players can fight enemies and gain experience.
 5. **Game Events** - Key game events (such as battles, item discoveries, level completions) should be recorded in a `GameTimeline`.
 
-Remember, this project is a simplified RPG, so it doesn't have to incorporate every aspect of a full-fledged RPG. The main goal is to apply the principles of OOP that you've learned. You can always expand on this project later and add additional features as you continue to learn more about programming and game development. Good luck!
+#### More details
+
+Here is a basic overview of how the game could be played from a user's perspective:
+
+1. **Start the game**: The user starts the game, perhaps by running the program from the command line or by clicking on a game icon. An initial screen is presented to the user, with options to create a new character or load an existing one.
+
+    ```
+    Welcome to Adventure Game!
+    1. Create new character
+    2. Load existing character
+    ```
+
+2. **Character creation**: If the user chooses to create a new character, they will be prompted to enter details for their character. The exact details required will depend on your implementation.
+
+    ```
+    Enter your character's name: John
+    Choose your character's class:
+    1. Warrior
+    2. Mage
+    3. Rogue
+    ```
+
+3. **Main game loop**: Once the character is created, the main game loop starts. The player is presented with a list of actions they can perform, such as exploring the current level, checking their inventory, or using an item.
+
+    ```
+    You are in the forest. What would you like to do?
+    1. Explore
+    2. Check inventory
+    3. Use item
+    4. Save game
+    ```
+
+4. **Exploration**: If the player chooses to explore, a random event occurs. This could be finding an item, encountering an enemy, or perhaps nothing at all. If an item is found, it is automatically added to the player's inventory. If an enemy is encountered, a battle begins.
+
+    ```
+    You chose to explore...
+    You found a health potion! It has been added to your inventory.
+    ```
+
+5. **Inventory management**: If the player chooses to check their inventory or use an item, they are presented with a list of their current items. If they choose to use an item, the effects of that item are applied immediately (for example, a health potion might increase the player's health).
+
+    ```
+    Your current inventory:
+    1. Health potion
+    2. Magic scroll
+
+    Choose an item to use, or 0 to go back.
+    ```
+
+6. **Battles**: If a battle begins, the player and the enemy take turns attacking each other. The outcome of the battle is determined by comparing the player's attack strength and the enemy's defense (or however you choose to implement battles). The player might gain experience or items from winning a battle.
+
+    ```
+    A wild goblin appears!
+    The goblin attacks you for 5 damage.
+    You attack the goblin for 10 damage.
+    The goblin has been defeated! You gained 20 experience points.
+    ```
+
+7. **Game progression**: As the player gains experience, they level up and become stronger. They can find or earn better items and face stronger enemies. The player continues to explore levels, battle enemies, and collect items until they reach the end of the game, lose all their health, or choose to quit the game.
+
+This is a basic text-based representation of how the game might be played. Depending on your comfort level and the requirements of your project, you can also choose to implement a graphical interface for your game.
