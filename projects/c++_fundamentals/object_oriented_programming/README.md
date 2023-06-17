@@ -1115,3 +1115,32 @@ In a nutshell, this is how classes are typically separated into different files 
 20. [**`Exercise 7: Game Events and Template Classes (Templates)`**](./game_events/main.cpp)
 
     Consider a game where events happen at certain times. An event has a time at which it happens and an action that is triggered when the event happens. The action can be represented as a string (like "spawn_enemy", "start_boss_fight"). Create a `GameEvent` template class where the time can be of any numeric type (like `int` for frames, or `float` for seconds) and the action is always a `string`. The `GameEvent` class should have methods like `getTime()` and `getAction()`. Create a `GameTimeline` class that holds a list of `GameEvent` objects. It should have methods like `addEvent(GameEvent)`, `removeEvent(GameEvent)`, and `getEventsAtTime(T)`, where T is the same type as the time in `GameEvent`.
+
+### Final Project 
+
+The project will be a simplified text-based Role Playing Game (RPG).
+
+Project Name: Text-based RPG
+
+Project Description:
+Develop a text-based role-playing game (RPG) where players can create characters, explore different levels, fight enemies, collect items, and gain experience points. Use the principles of OOP, including inheritance, polymorphism, encapsulation, and abstraction to structure your game.
+
+Core Classes:
+1. `Character` - Abstract base class for different types of characters (player character, enemies, etc.).
+2. `Player` - Derived from `Character`, represents the player's character in the game.
+3. `Enemy` - Derived from `Character`, represents an enemy in the game.
+4. `Item` - Abstract base class for different types of items (weapons, potions, etc.).
+5. `Weapon`, `Potion`, etc. - Derived from `Item`, represent different types of items.
+6. `Inventory` - Represents a collection of `Item` objects that a `Character` possesses.
+7. `GameEvent` - Abstract base class for different types of game events (battles, discoveries, etc.). Utilize templates to manage different types of game events.
+8. `GameTimeline` - Represents a timeline of `GameEvent` objects.
+9. `Level` - Represents a game level where characters can interact, find items, and fight enemies.
+
+Key Features:
+1. **Character Creation** - Players can create their own characters.
+2. **Exploration** - Players can explore different levels, each with different enemies and items.
+3. **Inventory Management** - Players can collect items and use them.
+4. **Battles** - Players can fight enemies and gain experience.
+5. **Game Events** - Key game events (such as battles, item discoveries, level completions) should be recorded in a `GameTimeline`.
+
+Remember, this project is a simplified RPG, so it doesn't have to incorporate every aspect of a full-fledged RPG. The main goal is to apply the principles of OOP that you've learned. You can always expand on this project later and add additional features as you continue to learn more about programming and game development. Good luck!
