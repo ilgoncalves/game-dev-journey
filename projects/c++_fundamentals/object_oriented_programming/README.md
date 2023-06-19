@@ -1080,7 +1080,7 @@ In a nutshell, this is how classes are typically separated into different files 
 11. [**`Exercise 11: University System (Multiple Inheritance, Polymorphism, Friend Functions)`**]()
     Create a class hierarchy for a University. Have a base class `Person` and derive classes like `Student`, `Faculty`, and `Staff` from it. Further subclass `Student` into `Undergraduate` and `Graduate`. Subclass `Faculty` into `Professor` and `Instructor`. Each class should have relevant data and behaviors. Demonstrate polymorphic behavior by storing various types in a `std::vector<Person*>` and calling methods on them.
 
-12. [**`Exercise 12: Custom String Class (Operator Overloading, Exception Handling)`**]()
+12. [**`Exercise 12: Custom String Class (Operator Overloading, Exception Handling)`**](./custom_string/main.cpp)
     Create your own `String` class that encapsulates a `char` array. Include some of the main `std::string` methods like `length()`, `substr()`, and `find()`. Overload operators like `+`, `+=`, `==`, `!=`, and `<<` (for output to `std::ostream`).
 
 13. [**`Exercise 13: Generic Data Structure (Templates, Exception Handling)`**]()
