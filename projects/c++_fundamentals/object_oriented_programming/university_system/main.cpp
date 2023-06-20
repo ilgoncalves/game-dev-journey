@@ -1,17 +1,15 @@
 #include <iostream>
 #include <vector>
-#include <memory>
 
 class Person {
 public:
-    virtual void Display() const = 0;  // Pure virtual function
-    virtual ~Person() {}  // Virtual destructor
+    virtual void Display() const = 0;
+    virtual ~Person() {} 
 };
 
 class Student : public Person {
 public:
-    Student() = default;
-    virtual void Study() = 0;  // Students can study, further refined in subclasses
+    virtual void Study() = 0;  
     void Display() const override {
         std::cout << "Student\n";
     }
@@ -19,7 +17,6 @@ public:
 
 class Undergraduate : public Student {
 public:
-    Undergraduate() = default;
     void Study() override {
         std::cout << "Studying for a bachelor's degree\n";
     }
@@ -27,7 +24,6 @@ public:
 
 class Graduate : public Student {
 public:
-    Graduate() = default;
     void Study() override {
         std::cout << "Studying for a master's or doctoral degree\n";
     }
@@ -35,8 +31,7 @@ public:
 
 class Faculty : public Person {
 public:
-    Faculty() = default;
-    virtual void Teach() = 0;  // Faculty members can teach, further refined in subclasses
+    virtual void Teach() = 0;  
     void Display() const override {
         std::cout << "Faculty\n";
     }
@@ -44,7 +39,6 @@ public:
 
 class Professor : public Faculty {
 public:
-    Professor() = default;
     void Teach() override {
         std::cout << "Teaching advanced classes\n";
     }
@@ -52,7 +46,6 @@ public:
 
 class Instructor : public Faculty {
 public:
-    Instructor() = default;
     void Teach() override {
         std::cout << "Teaching introductory classes\n";
     }
@@ -60,31 +53,33 @@ public:
 
 class Staff : public Person {
 public:
-    Staff() = default;
     void Display() const override {
         std::cout << "Staff\n";
     }
 };
 
 int main() {
-    std::vector<std::unique_ptr<Person>> university;
+    std::vector<Person*> university;
 
-    university.push_back(std::make_unique<Undergraduate>());
-    university.push_back(std::make_unique<Graduate>());
-    university.push_back(std::make_unique<Professor>());
-    university.push_back(std::make_unique<Instructor>());
-    university.push_back(std::make_unique<Staff>());
+    university.push_back(new Undergraduate());
+    university.push_back(new Graduate());
+    university.push_back(new Professor());
+    university.push_back(new Instructor());
+    university.push_back(new Staff());
 
     for (const auto& person : university) {
         person->Display();
 
-        // Use dynamic_cast to call class-specific methods
-        if (Student* student = dynamic_cast<Student*>(person.get())) {
+        if (Student* student = dynamic_cast<Student*>(person)) {
             student->Study();
         }
-        else if (Faculty* faculty = dynamic_cast<Faculty*>(person.get())) {
+        else if (Faculty* faculty = dynamic_cast<Faculty*>(person)) {
             faculty->Teach();
         }
+    }
+
+    for (auto& person : university) {
+        delete person;
     }
 
     return 0;
