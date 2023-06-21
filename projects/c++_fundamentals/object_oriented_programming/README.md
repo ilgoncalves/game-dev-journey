@@ -1083,7 +1083,7 @@ In a nutshell, this is how classes are typically separated into different files 
 12. [**`Exercise 12: Custom String Class (Operator Overloading, Exception Handling)`**](./custom_string/main.cpp)
     Create your own `String` class that encapsulates a `char` array. Include some of the main `std::string` methods like `length()`, `substr()`, and `find()`. Overload operators like `+`, `+=`, `==`, `!=`, and `<<` (for output to `std::ostream`).
 
-13. [**`Exercise 13: Generic Data Structure (Templates, Exception Handling)`**]()
+13. [**`Exercise 13: Generic Data Structure (Templates, Exception Handling)`**](./generic_data_structure/main.cpp)
     Create a templated `LinkedList` class that can handle data of any type. Implement methods for adding elements, removing elements, searching for elements, and printing the list. If the list is empty and the remove method is called, throw and handle an appropriate exception.
 
 ### **Game Dev OOP Exercises**
