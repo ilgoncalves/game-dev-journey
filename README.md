@@ -90,8 +90,7 @@ Are you ready to embark on this awe-inspiring journey? Let the adventure begin! 
 Here is a list of projects that I've completed during my learning journey. Each project folder contains a README with a brief description, goals, and technologies used.
 
 1. C++ Fundamentals
-   - [Project 1](./projects/c++_fundamentals/project1)
-   - [Project 2](./projects/c++_fundamentals/project2)
+   - [Object Oriented Final Project](./projects/c++_fundamentals/object_oriented_programming/final_project/)
 
 # Utils
 
