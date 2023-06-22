@@ -1116,7 +1116,7 @@ In a nutshell, this is how classes are typically separated into different files 
 
     Consider a game where events happen at certain times. An event has a time at which it happens and an action that is triggered when the event happens. The action can be represented as a string (like "spawn_enemy", "start_boss_fight"). Create a `GameEvent` template class where the time can be of any numeric type (like `int` for frames, or `float` for seconds) and the action is always a `string`. The `GameEvent` class should have methods like `getTime()` and `getAction()`. Create a `GameTimeline` class that holds a list of `GameEvent` objects. It should have methods like `addEvent(GameEvent)`, `removeEvent(GameEvent)`, and `getEventsAtTime(T)`, where T is the same type as the time in `GameEvent`.
 
-### Final Project 
+### [**`Final Project `**](./final_project/main.cpp)
 
 The project will be a simplified text-based Role Playing Game (RPG).
 
